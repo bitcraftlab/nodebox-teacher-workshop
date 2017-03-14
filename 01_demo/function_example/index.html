@@ -1,0 +1,148 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Function Example</title>
+  <style>
+
+  body {
+    background-color: #fff;
+    font-family: "Arial";
+  }
+  canvas {
+    background-color: #fff;
+    border: 1px solid #ccc;
+  }
+  span {
+    display: inline-block;
+    padding-top: 10px;
+    padding-right: 20px;
+  }
+  section {
+    background-color: #eee;
+    border: 1px solid #ccc;
+    border-radius: .5em;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-right: -50%;
+    transform: translate(-50%, -50%);
+    padding: 15px 20px;
+    font-size: 14px;
+  }
+  h1 {
+    color: #666;
+  }
+  p span:last-child {
+    float: right;
+  }
+  .button {
+    padding: 10px;
+    width: 90px;
+    font-size: 14px;
+  }
+  input {
+    vertical-align:middle;
+  }
+  a {
+    color: #999;
+    text-decoration: none;
+  }
+
+  </style>
+</head>
+<body>
+
+  <section>
+    <h1>Function Example</h1>
+
+    <p>
+      <!-- Controls -->
+
+      <!-- use select if datalist does not work in your browser -->
+      <span>Function: <select id="function" oninput="changeFunction(this)"></select></span>
+      <!--
+      <span>Function: <input type="text" value="" list="function" oninput="changeFunction(this)"></span>
+      <datalist id="function"></datalist>
+      -->
+      <span class="right"><a class="sourceLink" target="_blank">source code</a></span>
+    </p>
+    <!-- The canvas element, where the visualization is rendered -->
+    <canvas id="c" width="800" height="600"></canvas>
+
+
+
+  </section>
+
+  <!-- A link to the NodeBox JavaScript API  -->
+  <script src="https://nodebox.live/api/v1/ndbx.js"></script>
+  <!-- <script src="https://cdn.rawgit.com/nodebox/g.js/master/dist/g.js"></script> -->
+
+  <!-- Your custom initialization code -->
+  <script>
+
+  // project options
+  var options = {
+    userId: 'bitcraftlab',
+    projectId: 'funcExample01',
+    functionId: 'main',
+    canvasId: 'c',
+    autoplay: true
+  };
+
+  // create source link
+  var url = "https://www.nodebox.live/" + options.userId + "/" + options.projectId;
+  document.getElementsByClassName("sourceLink")[0].href = url;
+
+  // Initialize the NodeBox player object
+  ndbx.embed(options, function(err, player) {
+
+    if (err) {
+      throw new Error(err);
+    } else {
+      // assign player
+      window.player = player;
+      //update data lists
+      createFunctions();
+    }
+
+  });
+
+  // create gui to switch between functions
+  function createFunctions() {
+
+    // global list of functions
+    window._functionNames = player.project.functions.map(function(fn) {
+      return fn.name;
+    });
+
+    // get the datalist
+    var datalist =  document.getElementById('function');
+
+    // add one option for each NodeBox function
+    var functions = window._functionNames.forEach(function(fname) {
+      var option = document.createElement('option');
+      option.value = fname;
+      option.text = fname;
+      if(option.value === options.functionId) option.selected = true;
+      datalist.appendChild(option);
+    });
+
+  }
+
+  // This function is called when the function input is changed
+  function changeFunction(e) {
+
+    if(window._functionNames.indexOf(e.value) >= 0) {
+      console.log(e.value);
+      // change function id and restart the player
+      player.functionId = options.projectId + '.' + e.value;
+      player.stop();
+      player.start();
+    };
+
+  }
+
+  </script>
+</body>
+</html>
