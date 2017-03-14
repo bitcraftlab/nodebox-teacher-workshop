@@ -1,8 +1,10 @@
 <!doctype html>
+<html>
 <head>
   <meta charset="utf-8">
   <title>Embedding Example</title>
   <style>
+
   body {
     background-color: #fff;
     font-family: "Arial";
@@ -45,12 +47,10 @@
     color: #999;
     text-decoration: none;
   }
-
-
   </style>
 </head>
-<body>
 
+<body>
   <section>
     <h1>Embedding Example</h1>
 
@@ -59,7 +59,7 @@
     <br>
 
     <!-- The slider controls -->
-    <span> <button class="play button" onClick="javascript:playPause(this)">pause</button>
+    <span> <button class="play button" onClick="javascript:playPause(this)">pause</button></span>
     <span>size: <input type="range" min="10" max="500" step="1" oninput="changeSize(this)"></span>
     <span>hue: <input type="range" min="0" max="1" step="0.01" oninput="changeHue(this)"></span>
     <span class="right"><a class="sourceLink" target="_blank">source code</a></span>
@@ -72,6 +72,7 @@
 
   <!-- Your custom initialization code -->
   <script>
+
   // Again, replace these with your own userId / projectId / functionId / canvasId
   var options = {
     userId: 'demo',
@@ -86,7 +87,7 @@
   document.getElementsByClassName("sourceLink")[0].href = url;
 
   // Initialize the NodeBox player object
-  xxx = ndbx.embed(options, function(err, player) {
+  ndbx.embed(options, function(err, player) {
     if (err) {
       throw new Error(err);
     } else {
