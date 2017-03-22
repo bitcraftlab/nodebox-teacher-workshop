@@ -33,9 +33,6 @@
   h1 {
     color: #666;
   }
-  .right {
-    align: right;
-  }
   .button {
     padding: 10px;
     width: 90px;
@@ -54,12 +51,20 @@
 <body>
 
   <section>
+
     <h1>Dataviz Example</h1>
 
     <!-- The canvas element, where the visualization is rendered -->
-    <canvas id="c" width="500" height="200"></canvas>
+    <canvas id="c" width="800" height="300"></canvas>
     <br>
-    <span class="right"><a class="sourceLink" target="_blank">source code</a></span>
+    <span>Datum: <input id="date-select" type="date" list="days" oninput="changeDate(this)" /></span>
+    <!-- <span>Sensor: <select id="sensor" class="sensor-select" oninput="changeSensor(this)"></select> </span> -->
+
+    <span>Sensor: <input class="sensor-select" type="text" value="" list="sensor" oninput="changeSensor(this)"></span>
+    <datalist id="sensor"></datalist>
+    <span><a class="sourceLink" target="_blank">source code</a></span>
+    <span><a href="http://luftdaten.info/" target="_blank">data source</a></span>
+
   </section>
 
   <!-- A link to the NodeBox JavaScript API  -->
@@ -75,7 +80,7 @@
     projectId: 'datavizExample01',
     functionId: 'main',
     canvasId: 'c',
-    autoplay: true
+    autoplay: false
   };
 
   // create source link
@@ -90,9 +95,100 @@
     } else {
       // assign player
       window.player = player;
+      setupDateInput();
+      setupSensorInput();
     }
 
   });
+
+  // set date range
+  function setupDateInput() {
+
+    // get date range from nodebox
+    var dateMin = evaluateNode('dateMin');
+    var dateMax = evaluateNode('dateMax');
+    var dateSelect = evaluateNode('dateSelect');
+
+    // apply date range to input GUI
+    var input = document.querySelector('#date-select');
+    input.min = dateMin;
+    input.max = dateMax;
+    input.value = dateSelect;
+  }
+
+  // create sensor choices
+  function setupSensorInput() {
+
+    // update sensor list
+    var sensorSelect = evaluateNode('sensorSelect')[0];
+    var sensorElement =  document.querySelector('.sensor-select');
+    var sensorList =  document.querySelector('#sensor');
+
+    // one choice for each sensor (async)
+    var sensors = evaluateNode('sensorChoices').then(function(sensors) {
+
+      // keep a reference to the list
+      document._sensors = sensors;
+
+      // add one option for each sensor
+      var functions = sensors.forEach(function(id) {
+        var option = document.createElement('option');
+        option.value = id;
+        option.text = id;
+        if(id === sensorSelect) {
+          sensorElement.value = id;
+        }
+        sensorList.appendChild(option);
+      });
+
+    });
+  }
+
+  /*
+  // get port value from the network
+  function getValue(node, port) {
+    var project = window.player.plan;
+    var functionId = window.player.functionId;
+    var fn = ndbx.findFunction(project, functionId);
+    return ndbx.getValue(project, fn, node, {name: port});
+  }
+  */
+
+  // evaluate a node inside the network and return it
+  function evaluateNode(node, then) {
+    var project = window.player.plan;
+    var functionId = window.player.functionId;
+    var fn = ndbx.findFunction(project, functionId);
+    return ndbx.evaluateNode(project, fn, node);
+  }
+
+
+  // This function is called when the date input is changed.
+  function changeDate(e) {
+    // update input
+    window.player.setValue('dateSelect', 's', e.value);
+    // redraw
+    window.player.draw();
+  }
+
+
+  // This function is called when the sensor input is changed.
+  function changeSensor(e) {
+
+    // check input against sensor list
+    if(!(document._sensors && document._sensors.indexOf(e.value) > -1 )) return;
+
+    console.log("change sensor");
+
+    // update input
+    window.player.setValue('sensorSelect', 's', e.value);
+    console.log('selected sensor ' + e.value);
+
+    // redraw
+    window.player.draw();
+
+  }
+
 
   </script>
 </body>
