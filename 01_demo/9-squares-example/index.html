@@ -1,0 +1,147 @@
+<!doctype html>
+<html>
+<head>
+
+  <meta charset="utf-8">
+  <title>9 Squares Example</title>
+  <style>
+
+  body {
+    background-color: #fff;
+    font-family: "Arial";
+  }
+
+  canvas {
+    background-color: #fff;
+    border: 0px solid #ccc;
+    width: 150px;
+    height: 150px;
+  }
+
+  span {
+    display: inline-block;
+    padding: 10px 20px;
+  }
+
+  section {
+    background-color: #eee;
+    border: 1px solid #ccc;
+    border-radius: .5em;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-right: -50%;
+    transform: translate(-50%, -50%);
+    padding: 15px 20px;
+    font-size: 14px;
+  }
+
+  h1 {
+    color: #666;
+  }
+
+  p span:last-child {
+    float: right;
+  }
+
+  a {
+    color: #999;
+    text-decoration: none;
+  }
+
+  table {
+    border-collapse: collapse;
+  }
+
+  tr, td {
+    padding: 0px;
+    margin: 0px;
+    border: 0px;
+    font-size: 0px;
+  }
+
+  </style>
+</head>
+<body>
+
+  <section>
+    <h1>9 Squares Example</h1>
+    <p>
+
+      <!--nine canvases, one for each square -->
+      <table>
+        <tr>
+          <td><canvas id="square_one"></canvas></td>
+          <td><canvas id="square_two" ></canvas></td>
+          <td><canvas id="square_three"></canvas></td>
+        </tr>
+        <tr>
+          <td><canvas id="square_four"></canvas></td>
+          <td><canvas id="square_five" ></canvas></td>
+          <td><canvas id="square_six" ></canvas></td>
+        </tr>
+        <tr>
+          <td><canvas id="square_seven" ></canvas></td>
+          <td><canvas id="square_eight" ></canvas></td>
+          <td><canvas id="square_nine" ></canvas></td>
+        </tr>
+      </table>
+
+    </p>
+
+    <p>
+      <span class="right"><a class="sourceLink" target="_blank">source code</a></span>
+    </p>
+
+
+  </section>
+
+  <!-- A link to the NodeBox JavaScript API  -->
+  <script src="https://nodebox.live/api/v1/ndbx.js"></script>
+  <!-- <script src="https://cdn.rawgit.com/nodebox/g.js/master/dist/g.js"></script> -->
+
+  <!-- Your custom initialization code -->
+  <script>
+
+  var userId = 'bitcraftlab';
+  var projectId = 'funcExample02';
+
+  // create source link
+  var url = "https://www.nodebox.live/" + userId + "/" + projectId;
+  document.getElementsByClassName("sourceLink")[0].href = url;
+
+  // embed 9 squares
+  var ids = [ 'one', 'two', 'three', 'four', 'five', 'six', 'seven', 'eight', 'nine' ];
+  var squares = ids.map( function(i) { return 'square_' + i; } );
+  squares.forEach(embedSquare);
+
+  function embedSquare(id) {
+
+    // make sure to set the canvas dimensions to the size of the square
+    var cvs = document.getElementById(id);
+    cvs.width = 100;
+    cvs.height = 100;
+
+    // options for the current square
+    var options = {
+      userId: userId,
+      projectId: projectId,
+      functionId: id,
+      canvasId: id,
+      autoplay: true
+    };
+
+    // Initialize the NodeBox player for the current square
+    ndbx.embed(options, function(err, player) {
+      if (err) {
+        throw new Error(err);
+      } else {
+        window.player = player;
+      }
+    });
+
+  }
+
+  </script>
+</body>
+</html>
