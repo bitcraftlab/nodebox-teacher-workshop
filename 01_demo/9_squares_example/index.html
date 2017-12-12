@@ -104,7 +104,7 @@
   <script>
 
   var userId = 'bitcraftlab';
-  var projectId = 'funcExample02';
+  var projectId = 'nineSquares02';
 
   // create source link
   var url = "https://www.nodebox.live/" + userId + "/" + projectId;
@@ -113,7 +113,23 @@
   // embed 9 squares
   var ids = [ 'one', 'two', 'three', 'four', 'five', 'six', 'seven', 'eight', 'nine' ];
   var squares = ids.map( function(i) { return 'square_' + i; } );
+  window.players = {};
   squares.forEach(embedSquare);
+  window.requestAnimationFrame(animate);
+
+  // run several animations concurrently
+  function animate() {
+    
+    // increase current frame
+    ndbx._currentFrame += 1;
+
+    // display all the squares that have been loaded
+    squares.forEach(function(s) {
+      window.players[s] && window.players[s].draw();
+    });
+
+    window.requestAnimationFrame(animate);
+  }
 
   function embedSquare(id) {
 
@@ -128,7 +144,7 @@
       projectId: projectId,
       functionId: id,
       canvasId: id,
-      autoplay: true
+      autoplay: false
     };
 
     // Initialize the NodeBox player for the current square
@@ -136,11 +152,12 @@
       if (err) {
         throw new Error(err);
       } else {
-        window.player = player;
+        window.players[id] = player;
       }
     });
 
   }
+
 
   </script>
 </body>

@@ -1,0 +1,204 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Map Example</title>
+  <style>
+
+  body {
+    background-color: #fff;
+    font-family: "Arial";
+  }
+  canvas {
+    background-color: #fff;
+    border: 1px solid #ccc;
+
+  }
+  span {
+    display: inline-block;
+    padding-top: 10px;
+    padding-right: 20px;
+  }
+  section {
+    background-color: #eee;
+    border: 1px solid #ccc;
+    border-radius: .5em;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-right: -50%;
+    transform: translate(-50%, -50%);
+    padding: 15px 20px;
+    font-size: 14px;
+  }
+  h1 {
+    color: #666;
+  }
+  .right {
+    align: right;
+  }
+  .button {
+    padding: 10px;
+    width: 90px;
+    font-size: 14px;
+  }
+  input {
+    vertical-align:middle;
+  }
+  a {
+    color: #999;
+    text-decoration: none;
+  }
+
+  </style>
+</head>
+<body>
+
+  <section>
+    <h1>Map Example</h1>
+
+    <!-- The canvas element, where the visualization is rendered -->
+    <canvas id="c" width="500" height="500"></canvas>
+    <br>
+
+    <!-- Controls -->
+    <span>Stadtbezirk: <input type="text" value="" list="region" oninput="changeRegion(this)"></span>
+    <datalist id="region"></datalist>
+
+    <span>Datum: <input type="date" list="days" oninput="changeDate(this)" />
+      <span class="right"><a class="sourceLink" target="_blank">source code</a></span>
+
+    </section>
+
+    <!-- A link to the NodeBox JavaScript API  -->
+    <script src="https://nodebox.live/api/v1/ndbx.js"></script>
+    <!-- <script src="https://cdn.rawgit.com/nodebox/g.js/master/dist/g.js"></script> -->
+
+    <!-- Your custom initialization code -->
+    <script>
+
+    // fix canvas for retina display
+
+
+    // project options
+    var options = {
+      userId: 'bitcraftlab',
+      projectId: 'mapExample01',
+      functionId: 'main',
+      canvasId: 'c',
+      autoplay: true,
+      setWidthHeight: false
+    };
+
+    // create source link
+    var url = "https://www.nodebox.live/" + options.userId + "/" + options.projectId;
+    document.getElementsByClassName("sourceLink")[0].href = url;
+
+
+    // Initialize the NodeBox player object
+    ndbx.embed(options, function(err, player) {
+
+      if (err) {
+        throw new Error(err);
+      } else {
+
+        // look nice on retina display
+        fixPixelRatio(player);
+
+        // assign player
+        window.player = player;
+
+        //update data lists
+        createRegions();
+      }
+
+    });
+
+    // fix canvas size for devices with higher density / different zoom modes
+    function fixPixelRatio(player) {
+
+      // scale the canvas to match the pixel density
+      var cvs = document.getElementById('c');
+      var w = cvs.width;
+      var h = cvs.height;
+      var ratio = window.devicePixelRatio;
+
+      // update scaling
+      if(ratio != 1) {
+
+        // fix canvas pixels
+        cvs.width = ratio * w;
+        cvs.height = ratio * h;
+
+        // screen size stays the same
+        cvs.style.width = w + "px";
+        cvs.style.height = h + "px";
+
+        // Add a node to rescale everything on the nodebox side
+        var scale = ndbx.createNode(player.fn, 'g.scale');
+        // set node values
+        player.setValue(scale.name, 'scale', {x:ratio, y:ratio} );
+
+        // connect the new node
+        var out = player.fn.renderedNode;
+        ndbx.connect(player.fn, out, scale, 'shape');
+
+        // activate it
+        player.fn.renderedNode = scale.name;
+
+      }
+
+
+    }
+
+    // create region datalist for the gui
+    function createRegions() {
+
+      // get regions from NodeBox
+      var regions = player.ndbx.lookupJSFunction('mapExample01.regions')();
+
+      // add them to the datalist
+      var datalist =  document.getElementById('region');
+      regions.forEach(function(item) {
+        var option = document.createElement('option');
+        option.value = item;
+        datalist.appendChild(option);
+      });
+
+    }
+
+    // This function is called when the region input is changed
+    function changeRegion(e) {
+      console.log("region changed", e.value);
+      window.player.setValue('stadtBezirkSelect', 's', e.value);
+    }
+
+    // This function is called when the date input is changed.
+    function changeDate(e) {
+      console.log("date changed", e);
+      window.player.setValue('dateSelect', 'date', e.value);
+    }
+
+    /*
+    // example: evaluateNode("mapExample01.main", "group1")
+    function evaluateNode(network, node) {
+      var project = window.player.plan;
+      var network = ndbx.findFunction(player, node);
+      return ndbx.evaluateNode(project, network, node);
+    }
+
+    function setValue(node, port, value) {
+      window.player.setValue(node, port, value);
+    }
+
+    function getValue(node, port) {
+      var project = window.player.plan;
+      var fn = player.fn;
+      return ndbx.getValue(project, fn, node, {name: port});
+    }
+    */
+
+
+    </script>
+  </body>
+  </html>
