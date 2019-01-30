@@ -14,8 +14,6 @@
   canvas {
     background-color: #fff;
     border: 0px solid #ccc;
-    width: 150px;
-    height: 150px;
   }
 
   span {
@@ -105,6 +103,7 @@
 
   var userId = 'bitcraftlab';
   var projectId = 'nineSquares02';
+  var size = 100;
 
   // create source link
   var url = "https://www.nodebox.live/" + userId + "/" + projectId;
@@ -112,31 +111,31 @@
 
   // embed 9 squares
   var ids = [ 'one', 'two', 'three', 'four', 'five', 'six', 'seven', 'eight', 'nine' ];
-  var squares = ids.map( function(i) { return 'square_' + i; } );
+  var squares = ids.map( i => 'square_' + i );
   window.players = {};
-  squares.forEach(embedSquare);
+  squares.forEach(s => embedSquare(s, size));
   window.requestAnimationFrame(animate);
 
   // run several animations concurrently
   function animate() {
-    
+
     // increase current frame
     ndbx._currentFrame += 1;
 
     // display all the squares that have been loaded
-    squares.forEach(function(s) {
-      window.players[s] && window.players[s].draw();
-    });
+    squares.forEach( s => window.players[s] && window.players[s].draw() );
 
     window.requestAnimationFrame(animate);
   }
 
-  function embedSquare(id) {
+  function embedSquare(id, size) {
 
     // make sure to set the canvas dimensions to the size of the square
     var cvs = document.getElementById(id);
-    cvs.width = 100;
-    cvs.height = 100;
+
+    // set size of each tile
+    cvs.style.width = size + "px";
+    cvs.style.height = size + "px";
 
     // options for the current square
     var options = {
@@ -144,7 +143,8 @@
       projectId: projectId,
       functionId: id,
       canvasId: id,
-      autoplay: false
+      autoplay: false,
+      setWidthHeight: false
     };
 
     // Initialize the NodeBox player for the current square
@@ -152,7 +152,13 @@
       if (err) {
         throw new Error(err);
       } else {
+
+        // set canvas size in pixels according to the nodebox function
+        cvs.width = player.fn.width;
+        cvs.height = player.fn.height;
+
         window.players[id] = player;
+
       }
     });
 
