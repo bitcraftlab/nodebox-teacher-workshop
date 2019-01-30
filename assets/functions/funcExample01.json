@@ -1,0 +1,156 @@
+{
+    "title": "funcExample01",
+    "color": "teal",
+    "dependencies": {
+        "core/g": "dev"
+    },
+    "assets": {},
+    "functions": [
+        {
+            "name": "main",
+            "type": "network",
+            "renderedNode": "combine1",
+            "nodes": [
+                {
+                    "name": "rectangle1",
+                    "x": 85,
+                    "y": 85,
+                    "fn": "funcExample01.rectangle"
+                },
+                {
+                    "name": "triangle1",
+                    "x": 245,
+                    "y": 85,
+                    "fn": "funcExample01.triangle"
+                },
+                {
+                    "name": "circle1",
+                    "x": 405,
+                    "y": 85,
+                    "fn": "funcExample01.circle"
+                },
+                {
+                    "name": "combine1",
+                    "x": 245,
+                    "y": 265,
+                    "fn": "g.combine"
+                },
+                {
+                    "name": "translate1",
+                    "x": 85,
+                    "y": 145,
+                    "fn": "g.translate",
+                    "values": {
+                        "translate": {
+                            "x": -120,
+                            "y": 0
+                        }
+                    }
+                },
+                {
+                    "name": "translate2",
+                    "x": 405,
+                    "y": 155,
+                    "fn": "g.translate",
+                    "values": {
+                        "translate": {
+                            "x": 110,
+                            "y": 0
+                        }
+                    }
+                }
+            ],
+            "connections": [
+                {
+                    "output": "triangle1",
+                    "input": "combine1",
+                    "parameter": "list2"
+                },
+                {
+                    "output": "rectangle1",
+                    "input": "translate1",
+                    "parameter": "shape"
+                },
+                {
+                    "output": "translate1",
+                    "input": "combine1",
+                    "parameter": "list1"
+                },
+                {
+                    "output": "circle1",
+                    "input": "translate2",
+                    "parameter": "shape"
+                },
+                {
+                    "output": "translate2",
+                    "input": "combine1",
+                    "parameter": "list3"
+                }
+            ],
+            "parameters": [],
+            "returnsList": true
+        },
+        {
+            "name": "rectangle",
+            "type": "network",
+            "renderedNode": "rect1",
+            "nodes": [
+                {
+                    "name": "triangleWave1",
+                    "x": 717,
+                    "y": 208,
+                    "fn": "g.triangleWave"
+                },
+                {
+                    "name": "rect1",
+                    "x": 85,
+                    "y": 85,
+                    "fn": "g.rect"
+                }
+            ],
+            "connections": [],
+            "parameters": [],
+            "returnsList": true
+        },
+        {
+            "name": "triangle",
+            "type": "network",
+            "renderedNode": "polygon1",
+            "nodes": [
+                {
+                    "name": "polygon1",
+                    "x": 85,
+                    "y": 85,
+                    "fn": "g.polygon",
+                    "values": {
+                        "radius": 65,
+                        "position": {
+                            "x": 0,
+                            "y": 18
+                        }
+                    }
+                }
+            ],
+            "connections": [],
+            "parameters": [],
+            "returnsList": true
+        },
+        {
+            "name": "circle",
+            "type": "network",
+            "renderedNode": "ellipse1",
+            "nodes": [
+                {
+                    "name": "ellipse1",
+                    "x": 85,
+                    "y": 85,
+                    "fn": "g.ellipse"
+                }
+            ],
+            "connections": [],
+            "parameters": [],
+            "returnsList": true
+        }
+    ],
+    "id": "funcExample01"
+}

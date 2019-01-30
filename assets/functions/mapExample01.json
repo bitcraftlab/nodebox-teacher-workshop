@@ -1,0 +1,839 @@
+{
+    "title": "map-example-01",
+    "color": "darkblue",
+    "dependencies": {
+        "core/g": "dev"
+    },
+    "assets": {
+        "Stuttgart_Stadtteile.svg": "6178ccb716d90d7038d7cc2ae569230d",
+        "Stuttgart_Stadtteile_utf8.svg": "fc9592fb72a6feab019c8beb04b6d3a7"
+    },
+    "functions": [
+        {
+            "name": "main",
+            "type": "network",
+            "renderedNode": "group2",
+            "nodes": [
+                {
+                    "name": "import1",
+                    "x": 495,
+                    "y": -435,
+                    "fn": "g.import",
+                    "values": {
+                        "file": "Stuttgart_Stadtteile_utf8.svg"
+                    }
+                },
+                {
+                    "name": "lookup1",
+                    "x": 495,
+                    "y": -45,
+                    "fn": "g.lookup",
+                    "values": {
+                        "key": "shapes.0.shapes"
+                    }
+                },
+                {
+                    "name": "lookup2",
+                    "x": 615,
+                    "y": 65,
+                    "fn": "g.lookup",
+                    "values": {
+                        "key": "0"
+                    }
+                },
+                {
+                    "name": "lookup3",
+                    "x": 395,
+                    "y": 65,
+                    "fn": "g.lookup",
+                    "values": {
+                        "key": "1"
+                    }
+                },
+                {
+                    "name": "fit1",
+                    "x": 615,
+                    "y": 1545,
+                    "fn": "g.fit",
+                    "values": {
+                        "position": {
+                            "x": -30,
+                            "y": 40
+                        },
+                        "width": 400,
+                        "height": 400
+                    }
+                },
+                {
+                    "name": "colorize1",
+                    "x": 395,
+                    "y": 115,
+                    "fn": "g.colorize",
+                    "values": {
+                        "stroke": "rgba(0, 0, 0, 0.30486111111111114)",
+                        "fill": "rgba(222, 222, 222, 0.5699074074074074)"
+                    }
+                },
+                {
+                    "name": "colorize2",
+                    "x": 615,
+                    "y": 115,
+                    "fn": "g.colorize",
+                    "values": {
+                        "fill": "rgba(46, 78, 213, 0.3436342592592593)",
+                        "stroke": "rgba(0, 0, 0, 1)"
+                    }
+                },
+                {
+                    "name": "combine1",
+                    "x": 615,
+                    "y": 1445,
+                    "fn": "g.combine"
+                },
+                {
+                    "name": "slice1",
+                    "x": 655,
+                    "y": 945,
+                    "fn": "g.slice"
+                },
+                {
+                    "name": "integer1",
+                    "x": 1025,
+                    "y": 95,
+                    "fn": "g.integer",
+                    "values": {
+                        "v": 0
+                    }
+                },
+                {
+                    "name": "slice2",
+                    "x": 305,
+                    "y": 945,
+                    "fn": "g.slice"
+                },
+                {
+                    "name": "ungroup1",
+                    "x": 395,
+                    "y": 695,
+                    "fn": "g.ungroup"
+                },
+                {
+                    "name": "colorize3",
+                    "x": 305,
+                    "y": 995,
+                    "fn": "g.colorize",
+                    "values": {
+                        "fill": "rgba(255, 0, 0, 0.4597222222222222)"
+                    }
+                },
+                {
+                    "name": "group1",
+                    "x": 465,
+                    "y": 1265,
+                    "fn": "g.group"
+                },
+                {
+                    "name": "combine2",
+                    "x": 465,
+                    "y": 1215,
+                    "fn": "g.combine"
+                },
+                {
+                    "name": "stack1",
+                    "x": 795,
+                    "y": 705,
+                    "fn": "g.stack",
+                    "values": {
+                        "direction": "s",
+                        "margin": 1
+                    }
+                },
+                {
+                    "name": "align1",
+                    "x": 805,
+                    "y": 1275,
+                    "fn": "g.align",
+                    "values": {
+                        "hAlign": "left",
+                        "position": {
+                            "x": 145,
+                            "y": -230
+                        },
+                        "vAlign": "top"
+                    }
+                },
+                {
+                    "name": "combine3",
+                    "x": 795,
+                    "y": 1745,
+                    "fn": "g.combine",
+                    "masterList": "list1"
+                },
+                {
+                    "name": "group4",
+                    "x": 615,
+                    "y": 1495,
+                    "fn": "g.group"
+                },
+                {
+                    "name": "colorize5",
+                    "x": 655,
+                    "y": 1015,
+                    "fn": "g.colorize"
+                },
+                {
+                    "name": "slice3",
+                    "x": 1005,
+                    "y": 875,
+                    "fn": "g.slice",
+                    "values": {
+                        "invert": true
+                    }
+                },
+                {
+                    "name": "combine4",
+                    "x": 805,
+                    "y": 1145,
+                    "fn": "g.combine"
+                },
+                {
+                    "name": "slice4",
+                    "x": 465,
+                    "y": 945,
+                    "fn": "g.slice",
+                    "values": {
+                        "invert": true
+                    }
+                },
+                {
+                    "name": "stringEquals1",
+                    "x": 1035,
+                    "y": -285,
+                    "fn": "g.stringEquals"
+                },
+                {
+                    "name": "stadtBezirkSelect",
+                    "x": 1035,
+                    "y": -435,
+                    "fn": "g.string",
+                    "values": {
+                        "s": "Stuttgart-Mitte"
+                    }
+                },
+                {
+                    "name": "count1",
+                    "x": 1075,
+                    "y": -195,
+                    "fn": "g.count"
+                },
+                {
+                    "name": "range1",
+                    "x": 1075,
+                    "y": -115,
+                    "fn": "g.range"
+                },
+                {
+                    "name": "cull1",
+                    "x": 1025,
+                    "y": -25,
+                    "fn": "g.cull"
+                },
+                {
+                    "name": "regions1",
+                    "x": 785,
+                    "y": -435,
+                    "fn": "mapExample01.regions"
+                },
+                {
+                    "name": "info1",
+                    "x": 547.5266960037818,
+                    "y": -354.4869421102688,
+                    "fn": "mapExample01.info"
+                },
+                {
+                    "name": "textPath1",
+                    "x": 785,
+                    "y": -285,
+                    "fn": "g.textPath",
+                    "values": {
+                        "fontSize": 10
+                    }
+                },
+                {
+                    "name": "group5",
+                    "x": 805,
+                    "y": 1195,
+                    "fn": "g.group"
+                },
+                {
+                    "name": "group2",
+                    "x": 795,
+                    "y": 1825,
+                    "fn": "g.group"
+                }
+            ],
+            "connections": [
+                {
+                    "output": "import1",
+                    "input": "lookup1",
+                    "parameter": "table"
+                },
+                {
+                    "output": "lookup1",
+                    "input": "lookup2",
+                    "parameter": "table"
+                },
+                {
+                    "output": "lookup1",
+                    "input": "lookup3",
+                    "parameter": "table"
+                },
+                {
+                    "output": "lookup3",
+                    "input": "colorize1",
+                    "parameter": "shape"
+                },
+                {
+                    "output": "lookup2",
+                    "input": "colorize2",
+                    "parameter": "shape"
+                },
+                {
+                    "output": "colorize2",
+                    "input": "combine1",
+                    "parameter": "list1"
+                },
+                {
+                    "output": "integer1",
+                    "input": "slice1",
+                    "parameter": "startIndex"
+                },
+                {
+                    "output": "integer1",
+                    "input": "slice2",
+                    "parameter": "startIndex"
+                },
+                {
+                    "output": "colorize1",
+                    "input": "ungroup1",
+                    "parameter": "shape"
+                },
+                {
+                    "output": "ungroup1",
+                    "input": "slice2",
+                    "parameter": "l"
+                },
+                {
+                    "output": "slice2",
+                    "input": "colorize3",
+                    "parameter": "shape"
+                },
+                {
+                    "output": "colorize3",
+                    "input": "combine2",
+                    "parameter": "list2"
+                },
+                {
+                    "output": "ungroup1",
+                    "input": "combine2",
+                    "parameter": "list1"
+                },
+                {
+                    "output": "combine2",
+                    "input": "group1",
+                    "parameter": "shapes"
+                },
+                {
+                    "output": "group1",
+                    "input": "combine1",
+                    "parameter": "list2"
+                },
+                {
+                    "output": "fit1",
+                    "input": "combine3",
+                    "parameter": "list1"
+                },
+                {
+                    "output": "combine1",
+                    "input": "group4",
+                    "parameter": "shapes"
+                },
+                {
+                    "output": "group4",
+                    "input": "fit1",
+                    "parameter": "shape"
+                },
+                {
+                    "output": "slice1",
+                    "input": "colorize5",
+                    "parameter": "shape"
+                },
+                {
+                    "output": "integer1",
+                    "input": "slice3",
+                    "parameter": "startIndex"
+                },
+                {
+                    "output": "stack1",
+                    "input": "slice3",
+                    "parameter": "l"
+                },
+                {
+                    "output": "stack1",
+                    "input": "slice1",
+                    "parameter": "l"
+                },
+                {
+                    "output": "ungroup1",
+                    "input": "slice4",
+                    "parameter": "l"
+                },
+                {
+                    "output": "slice4",
+                    "input": "combine2",
+                    "parameter": "list3"
+                },
+                {
+                    "output": "integer1",
+                    "input": "slice4",
+                    "parameter": "startIndex"
+                },
+                {
+                    "output": "stadtBezirkSelect",
+                    "input": "stringEquals1",
+                    "parameter": "string1"
+                },
+                {
+                    "output": "stringEquals1",
+                    "input": "count1",
+                    "parameter": "l"
+                },
+                {
+                    "output": "count1",
+                    "input": "range1",
+                    "parameter": "max"
+                },
+                {
+                    "output": "stringEquals1",
+                    "input": "cull1",
+                    "parameter": "booleans"
+                },
+                {
+                    "output": "range1",
+                    "input": "cull1",
+                    "parameter": "l"
+                },
+                {
+                    "output": "cull1",
+                    "input": "integer1",
+                    "parameter": "v"
+                },
+                {
+                    "output": "slice3",
+                    "input": "combine4",
+                    "parameter": "list2"
+                },
+                {
+                    "output": "colorize5",
+                    "input": "combine4",
+                    "parameter": "list3"
+                },
+                {
+                    "output": "regions1",
+                    "input": "stringEquals1",
+                    "parameter": "string2"
+                },
+                {
+                    "output": "import1",
+                    "input": "info1",
+                    "parameter": "v"
+                },
+                {
+                    "output": "regions1",
+                    "input": "textPath1",
+                    "parameter": "text"
+                },
+                {
+                    "output": "combine4",
+                    "input": "group5",
+                    "parameter": "shapes"
+                },
+                {
+                    "output": "group5",
+                    "input": "align1",
+                    "parameter": "shape"
+                },
+                {
+                    "output": "align1",
+                    "input": "combine3",
+                    "parameter": "list2"
+                },
+                {
+                    "output": "stack1",
+                    "input": "combine4",
+                    "parameter": "list1"
+                },
+                {
+                    "output": "textPath1",
+                    "input": "stack1",
+                    "parameter": "shapes"
+                },
+                {
+                    "output": "combine3",
+                    "input": "group2",
+                    "parameter": "shapes"
+                }
+            ],
+            "parameters": [],
+            "returnsList": true,
+            "stickies": [
+                {
+                    "x": 575,
+                    "y": 35,
+                    "width": 165,
+                    "height": 135,
+                    "text": "Stadtteile"
+                },
+                {
+                    "x": 375,
+                    "y": 35,
+                    "width": 165,
+                    "height": 135,
+                    "text": "Stadtbezirke"
+                },
+                {
+                    "x": 1015,
+                    "y": 55,
+                    "width": 215,
+                    "height": 105,
+                    "text": "change the number to pick a region"
+                }
+            ]
+        },
+        {
+            "name": "info",
+            "type": "code",
+            "outputType": "float",
+            "parameters": [
+                {
+                    "name": "v",
+                    "type": "float",
+                    "value": 42
+                }
+            ],
+            "source": "mapExample01.info = function (v) {\n    console.log(v);\n    return v;\n};",
+            "ref": "Log an object to the console before passing it on",
+            "category": ""
+        },
+        {
+            "name": "importXML",
+            "type": "code",
+            "outputType": "object",
+            "parameters": [
+                {
+                    "name": "file",
+                    "type": "string",
+                    "value": ""
+                }
+            ],
+            "source": "\nmapExample01.importXML = function (file) {\n\n    // create a cache for xml files\n    // so we don't interfere with the default asset cache used for SVG etc.\n\n    if (!window._xmlCache) {\n        window._xmlCache = {};\n    }\n\n    if (window._xmlCache[file]) {\n        return window._xmlCache[file];\n    }\n\n    var asset = ndbx.findAsset(file);\n\n    if (typeof asset === 'undefined') {\n        return;\n    }\n\n    // parse xml\n    var parser = new DOMParser();\n    var result = parser.parseFromString(asset, \"text/xml\");\n\n    window._xmlCache[file] = result;\n    return result;\n\n}\n\n",
+            "ref": "### Import an asset as XML.\n\nThis is useful for accessing ids / labels inside an SVG file, that NodeBox would ignore otherwise.",
+            "category": ""
+        },
+        {
+            "name": "lookupXML",
+            "type": "code",
+            "outputType": "object",
+            "parameters": [
+                {
+                    "name": "xml",
+                    "type": "object",
+                    "value": "null"
+                },
+                {
+                    "name": "tagname",
+                    "type": "string",
+                    "value": ""
+                }
+            ],
+            "source": "mapExample01.lookupXML = function (xml, tagname) {\n    if (tagname && xml && xml.getElementsByTagName) {\n        //return xml.getElementsByTagName(tagname);\n        return xml.querySelectorAll(tagname);\n    };\n    return {};\n}",
+            "ref": "### Look up parts of XML files by tag name.",
+            "category": ""
+        },
+        {
+            "name": "pathLabels",
+            "type": "network",
+            "renderedNode": "lookup4",
+            "nodes": [
+                {
+                    "name": "lookupXML1",
+                    "x": 25,
+                    "y": 75,
+                    "fn": "mapExample01.lookupXML",
+                    "values": {
+                        "tagname": "g"
+                    }
+                },
+                {
+                    "name": "lookup1",
+                    "x": 25,
+                    "y": 125,
+                    "fn": "g.lookup",
+                    "values": {
+                        "key": "1"
+                    }
+                },
+                {
+                    "name": "lookupXML2",
+                    "x": 25,
+                    "y": 175,
+                    "fn": "mapExample01.lookupXML",
+                    "values": {
+                        "tagname": "path"
+                    }
+                },
+                {
+                    "name": "lookup2",
+                    "x": 25,
+                    "y": 355,
+                    "fn": "g.lookup",
+                    "values": {
+                        "key": "0"
+                    }
+                },
+                {
+                    "name": "lookup3",
+                    "x": 65,
+                    "y": 245,
+                    "fn": "g.lookup",
+                    "values": {
+                        "key": "length"
+                    }
+                },
+                {
+                    "name": "range1",
+                    "x": 65,
+                    "y": 295,
+                    "fn": "g.range"
+                },
+                {
+                    "name": "lookup4",
+                    "x": 25,
+                    "y": 415,
+                    "fn": "g.lookup",
+                    "values": {
+                        "key": "id"
+                    }
+                }
+            ],
+            "connections": [
+                {
+                    "output": "lookupXML1",
+                    "input": "lookup1",
+                    "parameter": "table"
+                },
+                {
+                    "output": "lookup1",
+                    "input": "lookupXML2",
+                    "parameter": "xml"
+                },
+                {
+                    "output": "lookupXML2",
+                    "input": "lookup2",
+                    "parameter": "table"
+                },
+                {
+                    "output": "lookupXML2",
+                    "input": "lookup3",
+                    "parameter": "table"
+                },
+                {
+                    "output": "lookup3",
+                    "input": "range1",
+                    "parameter": "max"
+                },
+                {
+                    "output": "range1",
+                    "input": "lookup2",
+                    "parameter": "key"
+                },
+                {
+                    "output": "lookup2",
+                    "input": "lookup4",
+                    "parameter": "table"
+                },
+                {
+                    "inlet": "xml",
+                    "input": "lookupXML1",
+                    "parameter": "xml"
+                },
+                {
+                    "inlet": "group",
+                    "input": "lookup1",
+                    "parameter": "key"
+                }
+            ],
+            "parameters": [
+                {
+                    "name": "xml",
+                    "type": "object",
+                    "value": "undefined"
+                },
+                {
+                    "name": "group",
+                    "type": "string",
+                    "value": "1"
+                }
+            ],
+            "returnsList": true,
+            "stickies": [],
+            "ref": "### Lookup SVG path labels in a group.  \nThe SVG needs to be passed in as XML.",
+            "async": false
+        },
+        {
+            "name": "regions",
+            "type": "network",
+            "renderedNode": "substring1",
+            "nodes": [
+                {
+                    "name": "importXML1",
+                    "x": 95,
+                    "y": 75,
+                    "fn": "mapExample01.importXML",
+                    "values": {
+                        "file": "Stuttgart_Stadtteile_utf8.svg"
+                    }
+                },
+                {
+                    "name": "pathLabels1",
+                    "x": 95,
+                    "y": 165,
+                    "fn": "mapExample01.pathLabels",
+                    "values": {
+                        "group": "2"
+                    }
+                },
+                {
+                    "name": "substring1",
+                    "x": 95,
+                    "y": 345,
+                    "fn": "g.substring",
+                    "values": {
+                        "end": 0
+                    }
+                },
+                {
+                    "name": "stringLength1",
+                    "x": 125,
+                    "y": 245,
+                    "fn": "g.stringLength"
+                }
+            ],
+            "connections": [
+                {
+                    "output": "importXML1",
+                    "input": "pathLabels1",
+                    "parameter": "xml"
+                },
+                {
+                    "output": "pathLabels1",
+                    "input": "substring1",
+                    "parameter": "s"
+                },
+                {
+                    "output": "pathLabels1",
+                    "input": "stringLength1",
+                    "parameter": "s"
+                },
+                {
+                    "output": "stringLength1",
+                    "input": "substring1",
+                    "parameter": "end"
+                }
+            ],
+            "parameters": [],
+            "returnsList": true,
+            "stickies": [
+                {
+                    "x": 75,
+                    "y": 125,
+                    "width": 185,
+                    "height": 265,
+                    "text": "Stadtbezirke"
+                }
+            ]
+        },
+        {
+            "name": "districts",
+            "type": "network",
+            "renderedNode": "substring1",
+            "nodes": [
+                {
+                    "name": "importXML1",
+                    "x": 75,
+                    "y": 25,
+                    "fn": "mapExample01.importXML",
+                    "values": {
+                        "filename": "Stuttgart_Stadtteile_utf8.svg",
+                        "file": "Stuttgart_Stadtteile_utf8.svg"
+                    }
+                },
+                {
+                    "name": "pathLabels1",
+                    "x": 75,
+                    "y": 135,
+                    "fn": "mapExample01.pathLabels"
+                },
+                {
+                    "name": "stringLength1",
+                    "x": 105,
+                    "y": 215,
+                    "fn": "g.stringLength"
+                },
+                {
+                    "name": "substring1",
+                    "x": 75,
+                    "y": 315,
+                    "fn": "g.substring",
+                    "values": {
+                        "start": 5
+                    }
+                }
+            ],
+            "connections": [
+                {
+                    "output": "importXML1",
+                    "input": "pathLabels1",
+                    "parameter": "xml"
+                },
+                {
+                    "output": "pathLabels1",
+                    "input": "substring1",
+                    "parameter": "s"
+                },
+                {
+                    "output": "stringLength1",
+                    "input": "substring1",
+                    "parameter": "end"
+                },
+                {
+                    "output": "pathLabels1",
+                    "input": "stringLength1",
+                    "parameter": "s"
+                }
+            ],
+            "parameters": [],
+            "returnsList": true,
+            "stickies": [
+                {
+                    "x": 55,
+                    "y": 95,
+                    "width": 195,
+                    "height": 265,
+                    "text": "Stadtteile"
+                }
+            ]
+        }
+    ],
+    "id": "mapExample01"
+}

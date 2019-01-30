@@ -1,0 +1,2343 @@
+{
+    "title": "workshop : 9 squares (animated)",
+    "color": "red",
+    "dependencies": {
+        "core/g": "dev",
+        "bitcraftlab/ani": "dev"
+    },
+    "assets": {},
+    "functions": [
+        {
+            "name": "main",
+            "type": "network",
+            "renderedNode": "translate1",
+            "nodes": [
+                {
+                    "name": "square_one1",
+                    "x": 45,
+                    "y": 45,
+                    "fn": "nineSquares02.square_one"
+                },
+                {
+                    "name": "square_two1",
+                    "x": 205,
+                    "y": 45,
+                    "fn": "nineSquares02.square_two"
+                },
+                {
+                    "name": "square_three1",
+                    "x": 365,
+                    "y": 45,
+                    "fn": "nineSquares02.square_three"
+                },
+                {
+                    "name": "square_four1",
+                    "x": 605,
+                    "y": 45,
+                    "fn": "nineSquares02.square_four"
+                },
+                {
+                    "name": "square_five1",
+                    "x": 765,
+                    "y": 45,
+                    "fn": "nineSquares02.square_five"
+                },
+                {
+                    "name": "square_six1",
+                    "x": 925,
+                    "y": 45,
+                    "fn": "nineSquares02.square_six"
+                },
+                {
+                    "name": "square_seven1",
+                    "x": 1125,
+                    "y": 45,
+                    "fn": "nineSquares02.square_seven"
+                },
+                {
+                    "name": "square_eight1",
+                    "x": 1285,
+                    "y": 45,
+                    "fn": "nineSquares02.square_eight"
+                },
+                {
+                    "name": "square_nine1",
+                    "x": 1445,
+                    "y": 45,
+                    "fn": "nineSquares02.square_nine"
+                },
+                {
+                    "name": "combine1",
+                    "x": 215,
+                    "y": 285,
+                    "fn": "g.combine"
+                },
+                {
+                    "name": "combine2",
+                    "x": 755,
+                    "y": 285,
+                    "fn": "g.combine"
+                },
+                {
+                    "name": "combine3",
+                    "x": 1285,
+                    "y": 285,
+                    "fn": "g.combine"
+                },
+                {
+                    "name": "combine4",
+                    "x": 765,
+                    "y": 515,
+                    "fn": "g.combine"
+                },
+                {
+                    "name": "grid1",
+                    "x": 925,
+                    "y": 505,
+                    "fn": "g.grid"
+                },
+                {
+                    "name": "translate1",
+                    "x": 765,
+                    "y": 665,
+                    "fn": "g.translate",
+                    "masterList": "shape"
+                },
+                {
+                    "name": "toBitmap1",
+                    "x": 45,
+                    "y": 195,
+                    "fn": "nineSquares02.toBitmap"
+                },
+                {
+                    "name": "toBitmap2",
+                    "x": 205,
+                    "y": 195,
+                    "fn": "nineSquares02.toBitmap"
+                },
+                {
+                    "name": "toBitmap3",
+                    "x": 365,
+                    "y": 195,
+                    "fn": "nineSquares02.toBitmap"
+                },
+                {
+                    "name": "toBitmap4",
+                    "x": 605,
+                    "y": 195,
+                    "fn": "nineSquares02.toBitmap"
+                },
+                {
+                    "name": "toBitmap5",
+                    "x": 765,
+                    "y": 195,
+                    "fn": "nineSquares02.toBitmap"
+                },
+                {
+                    "name": "toBitmap6",
+                    "x": 925,
+                    "y": 195,
+                    "fn": "nineSquares02.toBitmap"
+                },
+                {
+                    "name": "toBitmap7",
+                    "x": 1125,
+                    "y": 195,
+                    "fn": "nineSquares02.toBitmap"
+                },
+                {
+                    "name": "toBitmap8",
+                    "x": 1285,
+                    "y": 195,
+                    "fn": "nineSquares02.toBitmap"
+                },
+                {
+                    "name": "toBitmap9",
+                    "x": 1445,
+                    "y": 195,
+                    "fn": "nineSquares02.toBitmap"
+                },
+                {
+                    "name": "group1",
+                    "x": 45,
+                    "y": 115,
+                    "fn": "g.group"
+                },
+                {
+                    "name": "group2",
+                    "x": 205,
+                    "y": 115,
+                    "fn": "g.group"
+                },
+                {
+                    "name": "group3",
+                    "x": 365,
+                    "y": 115,
+                    "fn": "g.group"
+                },
+                {
+                    "name": "group4",
+                    "x": 605,
+                    "y": 115,
+                    "fn": "g.group"
+                },
+                {
+                    "name": "group5",
+                    "x": 765,
+                    "y": 115,
+                    "fn": "g.group"
+                },
+                {
+                    "name": "group6",
+                    "x": 925,
+                    "y": 115,
+                    "fn": "g.group"
+                },
+                {
+                    "name": "group7",
+                    "x": 1125,
+                    "y": 115,
+                    "fn": "g.group"
+                },
+                {
+                    "name": "group8",
+                    "x": 1285,
+                    "y": 115,
+                    "fn": "g.group"
+                },
+                {
+                    "name": "group9",
+                    "x": 1445,
+                    "y": 115,
+                    "fn": "g.group"
+                }
+            ],
+            "connections": [
+                {
+                    "output": "combine1",
+                    "input": "combine4",
+                    "parameter": "list1"
+                },
+                {
+                    "output": "combine2",
+                    "input": "combine4",
+                    "parameter": "list2"
+                },
+                {
+                    "output": "combine3",
+                    "input": "combine4",
+                    "parameter": "list3"
+                },
+                {
+                    "output": "combine4",
+                    "input": "translate1",
+                    "parameter": "shape"
+                },
+                {
+                    "output": "grid1",
+                    "input": "translate1",
+                    "parameter": "translate"
+                },
+                {
+                    "output": "toBitmap1",
+                    "input": "combine1",
+                    "parameter": "list1"
+                },
+                {
+                    "output": "toBitmap2",
+                    "input": "combine1",
+                    "parameter": "list2"
+                },
+                {
+                    "output": "toBitmap3",
+                    "input": "combine1",
+                    "parameter": "list3"
+                },
+                {
+                    "output": "toBitmap4",
+                    "input": "combine2",
+                    "parameter": "list1"
+                },
+                {
+                    "output": "toBitmap5",
+                    "input": "combine2",
+                    "parameter": "list2"
+                },
+                {
+                    "output": "toBitmap6",
+                    "input": "combine2",
+                    "parameter": "list3"
+                },
+                {
+                    "output": "toBitmap7",
+                    "input": "combine3",
+                    "parameter": "list1"
+                },
+                {
+                    "output": "toBitmap8",
+                    "input": "combine3",
+                    "parameter": "list2"
+                },
+                {
+                    "output": "toBitmap9",
+                    "input": "combine3",
+                    "parameter": "list3"
+                },
+                {
+                    "output": "group1",
+                    "input": "toBitmap1",
+                    "parameter": "shape"
+                },
+                {
+                    "output": "square_one1",
+                    "input": "group1",
+                    "parameter": "shapes"
+                },
+                {
+                    "output": "square_two1",
+                    "input": "group2",
+                    "parameter": "shapes"
+                },
+                {
+                    "output": "group2",
+                    "input": "toBitmap2",
+                    "parameter": "shape"
+                },
+                {
+                    "output": "square_three1",
+                    "input": "group3",
+                    "parameter": "shapes"
+                },
+                {
+                    "output": "group3",
+                    "input": "toBitmap3",
+                    "parameter": "shape"
+                },
+                {
+                    "output": "square_four1",
+                    "input": "group4",
+                    "parameter": "shapes"
+                },
+                {
+                    "output": "group4",
+                    "input": "toBitmap4",
+                    "parameter": "shape"
+                },
+                {
+                    "output": "square_five1",
+                    "input": "group5",
+                    "parameter": "shapes"
+                },
+                {
+                    "output": "group5",
+                    "input": "toBitmap5",
+                    "parameter": "shape"
+                },
+                {
+                    "output": "square_six1",
+                    "input": "group6",
+                    "parameter": "shapes"
+                },
+                {
+                    "output": "group6",
+                    "input": "toBitmap6",
+                    "parameter": "shape"
+                },
+                {
+                    "output": "square_seven1",
+                    "input": "group7",
+                    "parameter": "shapes"
+                },
+                {
+                    "output": "group7",
+                    "input": "toBitmap7",
+                    "parameter": "shape"
+                },
+                {
+                    "output": "square_eight1",
+                    "input": "group8",
+                    "parameter": "shapes"
+                },
+                {
+                    "output": "group8",
+                    "input": "toBitmap8",
+                    "parameter": "shape"
+                },
+                {
+                    "output": "square_nine1",
+                    "input": "group9",
+                    "parameter": "shapes"
+                },
+                {
+                    "output": "group9",
+                    "input": "toBitmap9",
+                    "parameter": "shape"
+                }
+            ],
+            "parameters": [],
+            "returnsList": true,
+            "width": 600,
+            "height": 600
+        },
+        {
+            "name": "toBitmap",
+            "type": "code",
+            "outputType": "",
+            "parameters": [
+                {
+                    "name": "shape",
+                    "type": "shape",
+                    "value": "",
+                    "takesList": false
+                },
+                {
+                    "name": "position",
+                    "type": "point",
+                    "value": {
+                        "x": 0,
+                        "y": 0
+                    }
+                },
+                {
+                    "name": "width",
+                    "type": "float",
+                    "value": 100
+                },
+                {
+                    "name": "height",
+                    "type": "float",
+                    "value": 100
+                }
+            ],
+            "source": "nineSquares02.toBitmap = function (shape, position, width, height) {\n    if(!shape) return;\n    var bounds = g.rect(position, width, height)\n    return g.toBitmap(shape, bounds);\n};",
+            "ref": "",
+            "category": ""
+        },
+        {
+            "name": "square_one",
+            "type": "network",
+            "renderedNode": "combine1",
+            "nodes": [
+                {
+                    "name": "rect1",
+                    "x": -85,
+                    "y": 45,
+                    "fn": "g.rect",
+                    "values": {
+                        "width": 50,
+                        "height": 50
+                    }
+                },
+                {
+                    "name": "colorize1",
+                    "x": 5,
+                    "y": 175,
+                    "fn": "g.colorize"
+                },
+                {
+                    "name": "rotate1",
+                    "x": 135,
+                    "y": 425,
+                    "fn": "g.rotate",
+                    "values": {
+                        "origin": {
+                            "x": 0,
+                            "y": 0
+                        }
+                    }
+                },
+                {
+                    "name": "easing1",
+                    "x": 315,
+                    "y": 185,
+                    "fn": "ani.easing",
+                    "values": {
+                        "end": 90,
+                        "direction": "InOut",
+                        "type": "Back"
+                    }
+                },
+                {
+                    "name": "combine1",
+                    "x": 135,
+                    "y": 585,
+                    "fn": "g.combine"
+                },
+                {
+                    "name": "metro1",
+                    "x": 315,
+                    "y": 85,
+                    "fn": "nineSquares02.metro",
+                    "values": {}
+                },
+                {
+                    "name": "color_three1",
+                    "x": 125,
+                    "y": -85,
+                    "fn": "nineSquares02.color_three"
+                },
+                {
+                    "name": "range1",
+                    "x": -85,
+                    "y": -85,
+                    "fn": "g.range",
+                    "values": {
+                        "min": 90,
+                        "max": 20,
+                        "step": -10
+                    }
+                },
+                {
+                    "name": "combine2",
+                    "x": 115,
+                    "y": 45,
+                    "fn": "g.combine"
+                },
+                {
+                    "name": "color_zero1",
+                    "x": 265,
+                    "y": -85,
+                    "fn": "nineSquares02.color_zero"
+                },
+                {
+                    "name": "color_two1",
+                    "x": 405,
+                    "y": -85,
+                    "fn": "nineSquares02.color_two"
+                },
+                {
+                    "name": "makeNumbers1",
+                    "x": 315,
+                    "y": 25,
+                    "fn": "g.makeNumbers",
+                    "values": {
+                        "s": "1;0.5"
+                    }
+                }
+            ],
+            "connections": [
+                {
+                    "output": "rect1",
+                    "input": "colorize1",
+                    "parameter": "shape"
+                },
+                {
+                    "output": "colorize1",
+                    "input": "rotate1",
+                    "parameter": "shape"
+                },
+                {
+                    "output": "easing1",
+                    "input": "rotate1",
+                    "parameter": "angle"
+                },
+                {
+                    "output": "rotate1",
+                    "input": "combine1",
+                    "parameter": "list1"
+                },
+                {
+                    "output": "metro1",
+                    "input": "easing1",
+                    "parameter": "time"
+                },
+                {
+                    "output": "range1",
+                    "input": "rect1",
+                    "parameter": "width"
+                },
+                {
+                    "output": "range1",
+                    "input": "rect1",
+                    "parameter": "height"
+                },
+                {
+                    "output": "color_three1",
+                    "input": "combine2",
+                    "parameter": "list1"
+                },
+                {
+                    "output": "combine2",
+                    "input": "colorize1",
+                    "parameter": "fill"
+                },
+                {
+                    "output": "color_zero1",
+                    "input": "combine2",
+                    "parameter": "list2"
+                },
+                {
+                    "output": "color_two1",
+                    "input": "combine2",
+                    "parameter": "list3"
+                },
+                {
+                    "output": "makeNumbers1",
+                    "input": "metro1",
+                    "parameter": "cycles"
+                }
+            ],
+            "parameters": [],
+            "returnsList": true,
+            "width": 100,
+            "height": 100
+        },
+        {
+            "name": "square_two",
+            "type": "network",
+            "renderedNode": "colorize1",
+            "nodes": [
+                {
+                    "name": "rect1",
+                    "x": 85,
+                    "y": 65,
+                    "fn": "g.rect",
+                    "values": {
+                        "height": 5,
+                        "position": {
+                            "x": 0,
+                            "y": -47.5
+                        }
+                    }
+                },
+                {
+                    "name": "copy1",
+                    "x": 85,
+                    "y": 165,
+                    "fn": "g.copy",
+                    "values": {
+                        "rotate": 0,
+                        "translate": {
+                            "x": 0,
+                            "y": 5
+                        },
+                        "copies": 20
+                    }
+                },
+                {
+                    "name": "colorize1",
+                    "x": 305,
+                    "y": 675,
+                    "fn": "g.colorize"
+                },
+                {
+                    "name": "combine1",
+                    "x": 475,
+                    "y": 185,
+                    "fn": "g.combine"
+                },
+                {
+                    "name": "color_two1",
+                    "x": 285,
+                    "y": 65,
+                    "fn": "nineSquares02.color_two"
+                },
+                {
+                    "name": "color_three1",
+                    "x": 415,
+                    "y": 65,
+                    "fn": "nineSquares02.color_three"
+                },
+                {
+                    "name": "color_one1",
+                    "x": 555,
+                    "y": 65,
+                    "fn": "nineSquares02.color_one"
+                },
+                {
+                    "name": "color_zero1",
+                    "x": 685,
+                    "y": 65,
+                    "fn": "nineSquares02.color_zero"
+                },
+                {
+                    "name": "shift1",
+                    "x": 555,
+                    "y": 575,
+                    "fn": "g.shift"
+                },
+                {
+                    "name": "metro1",
+                    "x": 755,
+                    "y": 295,
+                    "fn": "nineSquares02.metro",
+                    "values": {
+                        "direction": "In",
+                        "cycles": 5
+                    }
+                },
+                {
+                    "name": "convert1",
+                    "x": 655,
+                    "y": 435,
+                    "fn": "g.convert",
+                    "values": {
+                        "outMax": 3,
+                        "outMin": 1
+                    }
+                },
+                {
+                    "name": "count1",
+                    "x": 575,
+                    "y": 285,
+                    "fn": "g.count"
+                }
+            ],
+            "connections": [
+                {
+                    "output": "rect1",
+                    "input": "copy1",
+                    "parameter": "shape"
+                },
+                {
+                    "output": "copy1",
+                    "input": "colorize1",
+                    "parameter": "shape"
+                },
+                {
+                    "output": "color_two1",
+                    "input": "combine1",
+                    "parameter": "list1"
+                },
+                {
+                    "output": "color_three1",
+                    "input": "combine1",
+                    "parameter": "list2"
+                },
+                {
+                    "output": "color_one1",
+                    "input": "combine1",
+                    "parameter": "list3"
+                },
+                {
+                    "output": "color_zero1",
+                    "input": "combine1",
+                    "parameter": "list4"
+                },
+                {
+                    "output": "combine1",
+                    "input": "shift1",
+                    "parameter": "l"
+                },
+                {
+                    "output": "shift1",
+                    "input": "colorize1",
+                    "parameter": "fill"
+                },
+                {
+                    "output": "metro1",
+                    "input": "convert1",
+                    "parameter": "v"
+                },
+                {
+                    "output": "convert1",
+                    "input": "shift1",
+                    "parameter": "amount"
+                },
+                {
+                    "output": "combine1",
+                    "input": "count1",
+                    "parameter": "l"
+                },
+                {
+                    "output": "count1",
+                    "input": "convert1",
+                    "parameter": "outMax"
+                }
+            ],
+            "parameters": [],
+            "returnsList": true,
+            "width": 100,
+            "height": 100
+        },
+        {
+            "name": "square_three",
+            "type": "network",
+            "renderedNode": "combine1",
+            "nodes": [
+                {
+                    "name": "combine1",
+                    "x": 245,
+                    "y": 995,
+                    "fn": "g.combine"
+                },
+                {
+                    "name": "ellipse1",
+                    "x": 95,
+                    "y": 375,
+                    "fn": "g.ellipse",
+                    "values": {
+                        "position": {
+                            "x": 50,
+                            "y": 0
+                        },
+                        "width": 50,
+                        "height": 50
+                    }
+                },
+                {
+                    "name": "colorize1",
+                    "x": 245,
+                    "y": 905,
+                    "fn": "g.colorize"
+                },
+                {
+                    "name": "color_one1",
+                    "x": 535,
+                    "y": 595,
+                    "fn": "nineSquares02.color_one"
+                },
+                {
+                    "name": "color_three1",
+                    "x": 375,
+                    "y": 595,
+                    "fn": "nineSquares02.color_three"
+                },
+                {
+                    "name": "makePoint1",
+                    "x": 45,
+                    "y": 245,
+                    "fn": "g.makePoint"
+                },
+                {
+                    "name": "easing1",
+                    "x": 45,
+                    "y": 185,
+                    "fn": "ani.easing",
+                    "values": {
+                        "start": -50,
+                        "end": 50,
+                        "direction": "InOut"
+                    }
+                },
+                {
+                    "name": "combine2",
+                    "x": 375,
+                    "y": 785,
+                    "fn": "g.combine"
+                },
+                {
+                    "name": "rotate1",
+                    "x": 125,
+                    "y": 785,
+                    "fn": "g.rotate"
+                },
+                {
+                    "name": "sample2",
+                    "x": 225,
+                    "y": 585,
+                    "fn": "g.sample",
+                    "values": {
+                        "amount": 12,
+                        "max": 360,
+                        "circular": true
+                    }
+                },
+                {
+                    "name": "compound1",
+                    "x": 95,
+                    "y": 485,
+                    "fn": "g.compound",
+                    "values": {
+                        "method": "difference"
+                    }
+                },
+                {
+                    "name": "ellipse2",
+                    "x": 225,
+                    "y": 375,
+                    "fn": "g.ellipse",
+                    "values": {
+                        "width": 50,
+                        "height": 50,
+                        "position": {
+                            "x": 50,
+                            "y": 1
+                        }
+                    }
+                },
+                {
+                    "name": "translate1",
+                    "x": 35,
+                    "y": 585,
+                    "fn": "g.translate"
+                },
+                {
+                    "name": "makePoint2",
+                    "x": 225,
+                    "y": 245,
+                    "fn": "g.makePoint",
+                    "values": {
+                        "x": 50
+                    }
+                },
+                {
+                    "name": "easing2",
+                    "x": 225,
+                    "y": 185,
+                    "fn": "ani.easing",
+                    "values": {
+                        "end": 25,
+                        "direction": "InOut"
+                    }
+                },
+                {
+                    "name": "metro1",
+                    "x": 45,
+                    "y": 55,
+                    "fn": "nineSquares02.metro",
+                    "values": {
+                        "shift": 0.27
+                    }
+                }
+            ],
+            "connections": [
+                {
+                    "output": "colorize1",
+                    "input": "combine1",
+                    "parameter": "list1"
+                },
+                {
+                    "output": "easing1",
+                    "input": "makePoint1",
+                    "parameter": "x"
+                },
+                {
+                    "output": "color_three1",
+                    "input": "combine2",
+                    "parameter": "list1"
+                },
+                {
+                    "output": "color_one1",
+                    "input": "combine2",
+                    "parameter": "list2"
+                },
+                {
+                    "output": "combine2",
+                    "input": "colorize1",
+                    "parameter": "fill"
+                },
+                {
+                    "output": "rotate1",
+                    "input": "colorize1",
+                    "parameter": "shape"
+                },
+                {
+                    "output": "sample2",
+                    "input": "rotate1",
+                    "parameter": "angle"
+                },
+                {
+                    "output": "ellipse1",
+                    "input": "compound1",
+                    "parameter": "shape1"
+                },
+                {
+                    "output": "ellipse2",
+                    "input": "compound1",
+                    "parameter": "shape2"
+                },
+                {
+                    "output": "translate1",
+                    "input": "rotate1",
+                    "parameter": "shape"
+                },
+                {
+                    "output": "compound1",
+                    "input": "translate1",
+                    "parameter": "shape"
+                },
+                {
+                    "output": "makePoint1",
+                    "input": "translate1",
+                    "parameter": "translate"
+                },
+                {
+                    "output": "makePoint2",
+                    "input": "ellipse2",
+                    "parameter": "position"
+                },
+                {
+                    "output": "easing2",
+                    "input": "makePoint2",
+                    "parameter": "y"
+                },
+                {
+                    "output": "metro1",
+                    "input": "easing1",
+                    "parameter": "time"
+                },
+                {
+                    "output": "metro1",
+                    "input": "easing2",
+                    "parameter": "time"
+                }
+            ],
+            "parameters": [],
+            "returnsList": true,
+            "width": 100,
+            "height": 100
+        },
+        {
+            "name": "square_four",
+            "type": "network",
+            "renderedNode": "rotate1",
+            "nodes": [
+                {
+                    "name": "rect2",
+                    "x": 45,
+                    "y": 45,
+                    "fn": "g.rect",
+                    "values": {
+                        "position": {
+                            "x": 0,
+                            "y": 0
+                        },
+                        "height": 20,
+                        "width": 141
+                    }
+                },
+                {
+                    "name": "colorize1",
+                    "x": 55,
+                    "y": 635,
+                    "fn": "g.colorize",
+                    "values": {
+                        "stroke": "rgba(255, 255, 255, 1)",
+                        "strokeWidth": 2
+                    }
+                },
+                {
+                    "name": "color_two1",
+                    "x": 355,
+                    "y": 315,
+                    "fn": "nineSquares02.color_two"
+                },
+                {
+                    "name": "color_one1",
+                    "x": 495,
+                    "y": 315,
+                    "fn": "nineSquares02.color_one"
+                },
+                {
+                    "name": "combine1",
+                    "x": 225,
+                    "y": 465,
+                    "fn": "g.combine"
+                },
+                {
+                    "name": "rotate1",
+                    "x": 55,
+                    "y": 745,
+                    "fn": "g.rotate"
+                },
+                {
+                    "name": "metro1",
+                    "x": 185,
+                    "y": 45,
+                    "fn": "nineSquares02.metro",
+                    "values": {
+                        "direction": "In"
+                    }
+                },
+                {
+                    "name": "easing1",
+                    "x": 185,
+                    "y": 235,
+                    "fn": "ani.easing",
+                    "values": {
+                        "time": 120,
+                        "end": 60,
+                        "type": "Linear",
+                        "direction": "InOut"
+                    }
+                },
+                {
+                    "name": "color_three1",
+                    "x": 225,
+                    "y": 315,
+                    "fn": "nineSquares02.color_three"
+                },
+                {
+                    "name": "range1",
+                    "x": 345,
+                    "y": 45,
+                    "fn": "g.range",
+                    "values": {
+                        "max": 6,
+                        "includeMax": true,
+                        "min": 1
+                    }
+                },
+                {
+                    "name": "multiply1",
+                    "x": 345,
+                    "y": 115,
+                    "fn": "g.multiply",
+                    "values": {
+                        "b": 180
+                    }
+                },
+                {
+                    "name": "color_zero1",
+                    "x": 415,
+                    "y": 465,
+                    "fn": "nineSquares02.color_zero"
+                }
+            ],
+            "connections": [
+                {
+                    "output": "combine1",
+                    "input": "colorize1",
+                    "parameter": "fill"
+                },
+                {
+                    "output": "metro1",
+                    "input": "easing1",
+                    "parameter": "time"
+                },
+                {
+                    "output": "range1",
+                    "input": "multiply1",
+                    "parameter": "a"
+                },
+                {
+                    "output": "multiply1",
+                    "input": "easing1",
+                    "parameter": "end"
+                },
+                {
+                    "output": "rect2",
+                    "input": "colorize1",
+                    "parameter": "shape"
+                },
+                {
+                    "output": "easing1",
+                    "input": "rotate1",
+                    "parameter": "angle"
+                },
+                {
+                    "output": "colorize1",
+                    "input": "rotate1",
+                    "parameter": "shape"
+                },
+                {
+                    "output": "color_zero1",
+                    "input": "colorize1",
+                    "parameter": "stroke"
+                },
+                {
+                    "output": "color_two1",
+                    "input": "combine1",
+                    "parameter": "list2"
+                },
+                {
+                    "output": "color_three1",
+                    "input": "combine1",
+                    "parameter": "list1"
+                },
+                {
+                    "output": "color_one1",
+                    "input": "combine1",
+                    "parameter": "list3"
+                }
+            ],
+            "parameters": [],
+            "returnsList": true,
+            "width": 100,
+            "height": 100
+        },
+        {
+            "name": "square_five",
+            "type": "network",
+            "renderedNode": "group1",
+            "nodes": [
+                {
+                    "name": "rect1",
+                    "x": -85,
+                    "y": 65,
+                    "fn": "g.rect"
+                },
+                {
+                    "name": "ellipse1",
+                    "x": 305,
+                    "y": 505,
+                    "fn": "g.ellipse",
+                    "values": {
+                        "height": 50,
+                        "width": 50
+                    }
+                },
+                {
+                    "name": "group1",
+                    "x": 105,
+                    "y": 905,
+                    "fn": "g.group"
+                },
+                {
+                    "name": "combine1",
+                    "x": 105,
+                    "y": 795,
+                    "fn": "g.combine"
+                },
+                {
+                    "name": "colorize2",
+                    "x": -85,
+                    "y": 265,
+                    "fn": "g.colorize"
+                },
+                {
+                    "name": "color_three1",
+                    "x": 95,
+                    "y": 65,
+                    "fn": "nineSquares02.color_three"
+                },
+                {
+                    "name": "colorize1",
+                    "x": 305,
+                    "y": 605,
+                    "fn": "g.colorize"
+                },
+                {
+                    "name": "combine2",
+                    "x": 535,
+                    "y": 265,
+                    "fn": "g.combine"
+                },
+                {
+                    "name": "color_zero1",
+                    "x": 725,
+                    "y": 125,
+                    "fn": "nineSquares02.color_zero"
+                },
+                {
+                    "name": "color_one2",
+                    "x": 535,
+                    "y": 125,
+                    "fn": "nineSquares02.color_one"
+                },
+                {
+                    "name": "bounce1",
+                    "x": 355,
+                    "y": 145,
+                    "fn": "nineSquares02.bounce",
+                    "values": {
+                        "hops": 3
+                    }
+                },
+                {
+                    "name": "sample1",
+                    "x": 305,
+                    "y": -35,
+                    "fn": "g.sample",
+                    "values": {
+                        "amount": 16,
+                        "max": 0.375,
+                        "min": 0.3
+                    }
+                },
+                {
+                    "name": "makePoint1",
+                    "x": 305,
+                    "y": 275,
+                    "fn": "g.makePoint"
+                },
+                {
+                    "name": "scale1",
+                    "x": 305,
+                    "y": 355,
+                    "fn": "g.scale",
+                    "values": {
+                        "scale": {
+                            "x": 100,
+                            "y": -100
+                        },
+                        "origin": {
+                            "x": 0,
+                            "y": 0
+                        }
+                    }
+                },
+                {
+                    "name": "translate1",
+                    "x": 305,
+                    "y": 415,
+                    "fn": "g.translate",
+                    "values": {
+                        "translate": {
+                            "x": -50,
+                            "y": 25
+                        }
+                    }
+                },
+                {
+                    "name": "metro1",
+                    "x": 305,
+                    "y": 45,
+                    "fn": "nineSquares02.metro"
+                }
+            ],
+            "connections": [
+                {
+                    "output": "combine1",
+                    "input": "group1",
+                    "parameter": "shapes"
+                },
+                {
+                    "output": "rect1",
+                    "input": "colorize2",
+                    "parameter": "shape"
+                },
+                {
+                    "output": "colorize2",
+                    "input": "combine1",
+                    "parameter": "list1"
+                },
+                {
+                    "output": "colorize1",
+                    "input": "combine1",
+                    "parameter": "list2"
+                },
+                {
+                    "output": "color_zero1",
+                    "input": "combine2",
+                    "parameter": "list3"
+                },
+                {
+                    "output": "color_three1",
+                    "input": "colorize2",
+                    "parameter": "fill"
+                },
+                {
+                    "output": "color_one2",
+                    "input": "combine2",
+                    "parameter": "list1"
+                },
+                {
+                    "output": "ellipse1",
+                    "input": "colorize1",
+                    "parameter": "shape"
+                },
+                {
+                    "output": "bounce1",
+                    "input": "makePoint1",
+                    "parameter": "y"
+                },
+                {
+                    "output": "makePoint1",
+                    "input": "scale1",
+                    "parameter": "shape"
+                },
+                {
+                    "output": "scale1",
+                    "input": "translate1",
+                    "parameter": "shape"
+                },
+                {
+                    "output": "translate1",
+                    "input": "ellipse1",
+                    "parameter": "position"
+                },
+                {
+                    "output": "sample1",
+                    "input": "metro1",
+                    "parameter": "shift"
+                },
+                {
+                    "output": "metro1",
+                    "input": "makePoint1",
+                    "parameter": "x"
+                },
+                {
+                    "output": "metro1",
+                    "input": "bounce1",
+                    "parameter": "t"
+                },
+                {
+                    "output": "combine2",
+                    "input": "colorize1",
+                    "parameter": "fill"
+                }
+            ],
+            "parameters": [],
+            "returnsList": true,
+            "width": 100,
+            "height": 100
+        },
+        {
+            "name": "square_six",
+            "type": "network",
+            "renderedNode": "colorize1",
+            "nodes": [
+                {
+                    "name": "rect2",
+                    "x": 45,
+                    "y": 35,
+                    "fn": "g.rect",
+                    "values": {
+                        "position": {
+                            "x": 0,
+                            "y": 0
+                        },
+                        "width": 5,
+                        "height": 141
+                    }
+                },
+                {
+                    "name": "copy2",
+                    "x": 45,
+                    "y": 105,
+                    "fn": "g.copy",
+                    "values": {
+                        "rotate": 0,
+                        "translate": {
+                            "x": 10,
+                            "y": 0
+                        },
+                        "copies": 20
+                    }
+                },
+                {
+                    "name": "group2",
+                    "x": 45,
+                    "y": 175,
+                    "fn": "g.group"
+                },
+                {
+                    "name": "rotate1",
+                    "x": 45,
+                    "y": 245,
+                    "fn": "g.rotate",
+                    "values": {
+                        "angle": 45
+                    }
+                },
+                {
+                    "name": "align1",
+                    "x": 45,
+                    "y": 305,
+                    "fn": "g.align"
+                },
+                {
+                    "name": "rect1",
+                    "x": 195,
+                    "y": 305,
+                    "fn": "g.rect",
+                    "values": {
+                        "position": {
+                            "x": 0,
+                            "y": 0
+                        },
+                        "width": 50
+                    }
+                },
+                {
+                    "name": "compound1",
+                    "x": 45,
+                    "y": 455,
+                    "fn": "g.compound",
+                    "values": {
+                        "method": "intersection"
+                    }
+                },
+                {
+                    "name": "colorize1",
+                    "x": 45,
+                    "y": 585,
+                    "fn": "g.colorize"
+                },
+                {
+                    "name": "color_two1",
+                    "x": 195,
+                    "y": 455,
+                    "fn": "nineSquares02.color_two"
+                }
+            ],
+            "connections": [
+                {
+                    "output": "rect2",
+                    "input": "copy2",
+                    "parameter": "shape"
+                },
+                {
+                    "output": "copy2",
+                    "input": "group2",
+                    "parameter": "shapes"
+                },
+                {
+                    "output": "group2",
+                    "input": "rotate1",
+                    "parameter": "shape"
+                },
+                {
+                    "output": "rotate1",
+                    "input": "align1",
+                    "parameter": "shape"
+                },
+                {
+                    "output": "rect1",
+                    "input": "compound1",
+                    "parameter": "shape2"
+                },
+                {
+                    "output": "align1",
+                    "input": "compound1",
+                    "parameter": "shape1"
+                },
+                {
+                    "output": "compound1",
+                    "input": "colorize1",
+                    "parameter": "shape"
+                },
+                {
+                    "output": "color_two1",
+                    "input": "colorize1",
+                    "parameter": "fill"
+                }
+            ],
+            "parameters": [],
+            "returnsList": true,
+            "width": 100,
+            "height": 100
+        },
+        {
+            "name": "square_seven",
+            "type": "network",
+            "renderedNode": "group1",
+            "nodes": [
+                {
+                    "name": "group1",
+                    "x": 45,
+                    "y": 295,
+                    "fn": "g.group"
+                },
+                {
+                    "name": "ellipse1",
+                    "x": 45,
+                    "y": 45,
+                    "fn": "g.ellipse",
+                    "values": {
+                        "width": 50,
+                        "height": 50,
+                        "position": {
+                            "x": 0,
+                            "y": 50
+                        }
+                    }
+                },
+                {
+                    "name": "copy1",
+                    "x": 45,
+                    "y": 135,
+                    "fn": "g.copy",
+                    "values": {
+                        "rotate": 90,
+                        "copies": 4
+                    }
+                },
+                {
+                    "name": "combine1",
+                    "x": 195,
+                    "y": 135,
+                    "fn": "g.combine"
+                },
+                {
+                    "name": "color_two1",
+                    "x": 335,
+                    "y": 45,
+                    "fn": "nineSquares02.color_two"
+                },
+                {
+                    "name": "colorize1",
+                    "x": 45,
+                    "y": 215,
+                    "fn": "g.colorize"
+                },
+                {
+                    "name": "color_three1",
+                    "x": 195,
+                    "y": 45,
+                    "fn": "nineSquares02.color_three"
+                }
+            ],
+            "connections": [
+                {
+                    "output": "ellipse1",
+                    "input": "copy1",
+                    "parameter": "shape"
+                },
+                {
+                    "output": "copy1",
+                    "input": "colorize1",
+                    "parameter": "shape"
+                },
+                {
+                    "output": "combine1",
+                    "input": "colorize1",
+                    "parameter": "fill"
+                },
+                {
+                    "output": "colorize1",
+                    "input": "group1",
+                    "parameter": "shapes"
+                },
+                {
+                    "output": "color_two1",
+                    "input": "combine1",
+                    "parameter": "list2"
+                },
+                {
+                    "output": "color_three1",
+                    "input": "combine1",
+                    "parameter": "list1"
+                }
+            ],
+            "parameters": [],
+            "returnsList": true,
+            "width": 100,
+            "height": 100
+        },
+        {
+            "name": "square_eight",
+            "type": "network",
+            "renderedNode": "translate1",
+            "nodes": [
+                {
+                    "name": "rect3",
+                    "x": 45,
+                    "y": 395,
+                    "fn": "g.rect",
+                    "values": {
+                        "width": 20,
+                        "height": 50
+                    }
+                },
+                {
+                    "name": "metro1",
+                    "x": 195,
+                    "y": 105,
+                    "fn": "nineSquares02.metro",
+                    "values": {
+                        "shift": 0.5,
+                        "cycles": 2
+                    }
+                },
+                {
+                    "name": "makePoint1",
+                    "x": 45,
+                    "y": 285,
+                    "fn": "g.makePoint"
+                },
+                {
+                    "name": "easing1",
+                    "x": 205,
+                    "y": 175,
+                    "fn": "ani.easing",
+                    "values": {
+                        "end": 59,
+                        "start": -42,
+                        "direction": "InOut",
+                        "type": "Bounce"
+                    }
+                },
+                {
+                    "name": "sample1",
+                    "x": 45,
+                    "y": 45,
+                    "fn": "g.sample",
+                    "values": {
+                        "amount": 25,
+                        "min": -50,
+                        "max": 50,
+                        "circular": true
+                    }
+                },
+                {
+                    "name": "sample2",
+                    "x": 195,
+                    "y": 45,
+                    "fn": "g.sample",
+                    "values": {
+                        "max": 1,
+                        "amount": 50
+                    }
+                },
+                {
+                    "name": "colorize3",
+                    "x": 45,
+                    "y": 655,
+                    "fn": "g.colorize",
+                    "values": {
+                        "stroke": "rgba(255, 255, 255, 1)"
+                    }
+                },
+                {
+                    "name": "color_two2",
+                    "x": 225,
+                    "y": 275,
+                    "fn": "nineSquares02.color_two"
+                },
+                {
+                    "name": "combine3",
+                    "x": 225,
+                    "y": 395,
+                    "fn": "g.combine"
+                },
+                {
+                    "name": "translate1",
+                    "x": 45,
+                    "y": 705,
+                    "fn": "g.translate",
+                    "values": {
+                        "translate": {
+                            "x": 2.5,
+                            "y": 0
+                        }
+                    }
+                },
+                {
+                    "name": "color_one1",
+                    "x": 415,
+                    "y": 275,
+                    "fn": "nineSquares02.color_one"
+                },
+                {
+                    "name": "color_three3",
+                    "x": 415,
+                    "y": 395,
+                    "fn": "nineSquares02.color_three"
+                }
+            ],
+            "connections": [
+                {
+                    "output": "metro1",
+                    "input": "easing1",
+                    "parameter": "time"
+                },
+                {
+                    "output": "easing1",
+                    "input": "makePoint1",
+                    "parameter": "y"
+                },
+                {
+                    "output": "makePoint1",
+                    "input": "rect3",
+                    "parameter": "position"
+                },
+                {
+                    "output": "sample1",
+                    "input": "makePoint1",
+                    "parameter": "x"
+                },
+                {
+                    "output": "sample2",
+                    "input": "metro1",
+                    "parameter": "shift"
+                },
+                {
+                    "output": "rect3",
+                    "input": "colorize3",
+                    "parameter": "shape"
+                },
+                {
+                    "output": "color_two2",
+                    "input": "combine3",
+                    "parameter": "list1"
+                },
+                {
+                    "output": "combine3",
+                    "input": "colorize3",
+                    "parameter": "fill"
+                },
+                {
+                    "output": "colorize3",
+                    "input": "translate1",
+                    "parameter": "shape"
+                },
+                {
+                    "output": "color_one1",
+                    "input": "combine3",
+                    "parameter": "list3"
+                },
+                {
+                    "output": "color_three3",
+                    "input": "colorize3",
+                    "parameter": "stroke"
+                }
+            ],
+            "parameters": [],
+            "returnsList": true,
+            "width": 100,
+            "height": 100
+        },
+        {
+            "name": "square_nine",
+            "type": "network",
+            "renderedNode": "group1",
+            "nodes": [
+                {
+                    "name": "rect2",
+                    "x": 365,
+                    "y": 45,
+                    "fn": "g.rect",
+                    "values": {
+                        "height": 50
+                    }
+                },
+                {
+                    "name": "colorize1",
+                    "x": 45,
+                    "y": 155,
+                    "fn": "g.colorize"
+                },
+                {
+                    "name": "rect1",
+                    "x": 45,
+                    "y": 45,
+                    "fn": "g.rect",
+                    "values": {
+                        "width": 50
+                    }
+                },
+                {
+                    "name": "colorize2",
+                    "x": 365,
+                    "y": 155,
+                    "fn": "g.colorize"
+                },
+                {
+                    "name": "combine1",
+                    "x": 205,
+                    "y": 305,
+                    "fn": "g.combine"
+                },
+                {
+                    "name": "group1",
+                    "x": 205,
+                    "y": 385,
+                    "fn": "g.group"
+                },
+                {
+                    "name": "color_one1",
+                    "x": 175,
+                    "y": 45,
+                    "fn": "nineSquares02.color_one"
+                },
+                {
+                    "name": "color_two1",
+                    "x": 495,
+                    "y": 45,
+                    "fn": "nineSquares02.color_two"
+                }
+            ],
+            "connections": [
+                {
+                    "output": "rect1",
+                    "input": "colorize1",
+                    "parameter": "shape"
+                },
+                {
+                    "output": "rect2",
+                    "input": "colorize2",
+                    "parameter": "shape"
+                },
+                {
+                    "output": "colorize1",
+                    "input": "combine1",
+                    "parameter": "list1"
+                },
+                {
+                    "output": "colorize2",
+                    "input": "combine1",
+                    "parameter": "list2"
+                },
+                {
+                    "output": "combine1",
+                    "input": "group1",
+                    "parameter": "shapes"
+                },
+                {
+                    "output": "color_one1",
+                    "input": "colorize1",
+                    "parameter": "fill"
+                },
+                {
+                    "output": "color_two1",
+                    "input": "colorize2",
+                    "parameter": "fill"
+                }
+            ],
+            "parameters": [],
+            "returnsList": true,
+            "width": 100,
+            "height": 100
+        },
+        {
+            "name": "color_one",
+            "type": "network",
+            "renderedNode": "rgbColor1",
+            "nodes": [
+                {
+                    "name": "rgbColor1",
+                    "x": 56,
+                    "y": 55,
+                    "fn": "g.rgbColor",
+                    "values": {
+                        "green": 0.75,
+                        "red": 0,
+                        "blue": 1
+                    }
+                }
+            ],
+            "connections": [],
+            "parameters": [],
+            "returnsList": true
+        },
+        {
+            "name": "color_two",
+            "type": "network",
+            "renderedNode": "rgbColor1",
+            "nodes": [
+                {
+                    "name": "rgbColor1",
+                    "x": 55,
+                    "y": 55,
+                    "fn": "g.rgbColor",
+                    "values": {
+                        "green": 0.3,
+                        "blue": 1,
+                        "red": 0.3
+                    }
+                }
+            ],
+            "connections": [],
+            "parameters": [],
+            "returnsList": true
+        },
+        {
+            "name": "color_three",
+            "type": "network",
+            "renderedNode": "rgbColor1",
+            "nodes": [
+                {
+                    "name": "rgbColor1",
+                    "x": 15,
+                    "y": 5,
+                    "fn": "g.rgbColor",
+                    "values": {
+                        "green": 0,
+                        "red": 0,
+                        "blue": 0.6
+                    }
+                }
+            ],
+            "connections": [],
+            "parameters": [],
+            "returnsList": true
+        },
+        {
+            "name": "color_zero",
+            "type": "network",
+            "renderedNode": "rgbColor1",
+            "nodes": [
+                {
+                    "name": "rgbColor1",
+                    "x": -35,
+                    "y": 45,
+                    "fn": "g.rgbColor",
+                    "values": {
+                        "green": 1,
+                        "blue": 1
+                    }
+                }
+            ],
+            "connections": [],
+            "parameters": [],
+            "returnsList": true
+        },
+        {
+            "name": "metro",
+            "type": "network",
+            "renderedNode": "looper1",
+            "nodes": [
+                {
+                    "name": "looper1",
+                    "x": 265,
+                    "y": 655,
+                    "fn": "ani.looper",
+                    "values": {}
+                },
+                {
+                    "name": "frame1",
+                    "x": 45,
+                    "y": 365,
+                    "fn": "g.frame"
+                },
+                {
+                    "name": "frames",
+                    "x": 415,
+                    "y": 115,
+                    "fn": "g.integer",
+                    "values": {
+                        "v": 120
+                    }
+                },
+                {
+                    "name": "divide1",
+                    "x": 415,
+                    "y": 375,
+                    "fn": "g.divide"
+                }
+            ],
+            "connections": [
+                {
+                    "output": "frame1",
+                    "input": "looper1",
+                    "parameter": "frame"
+                },
+                {
+                    "inlet": "shift",
+                    "input": "looper1",
+                    "parameter": "shift"
+                },
+                {
+                    "inlet": "cycles",
+                    "input": "looper1",
+                    "parameter": "cycles"
+                },
+                {
+                    "output": "frames",
+                    "input": "divide1",
+                    "parameter": "a"
+                },
+                {
+                    "inlet": "cycles",
+                    "input": "divide1",
+                    "parameter": "b"
+                },
+                {
+                    "output": "divide1",
+                    "input": "looper1",
+                    "parameter": "period"
+                },
+                {
+                    "inlet": "direction",
+                    "input": "looper1",
+                    "parameter": "direction"
+                }
+            ],
+            "parameters": [
+                {
+                    "name": "shift",
+                    "type": "float",
+                    "value": 0
+                },
+                {
+                    "name": "cycles",
+                    "type": "float",
+                    "value": 1
+                },
+                {
+                    "name": "direction",
+                    "type": "string",
+                    "value": "InOut",
+                    "choices": [
+                        [
+                            "In",
+                            "In"
+                        ],
+                        [
+                            "Out",
+                            "Out"
+                        ],
+                        [
+                            "InOut",
+                            "InOut"
+                        ]
+                    ]
+                }
+            ],
+            "returnsList": true
+        },
+        {
+            "name": "bounce",
+            "type": "network",
+            "renderedNode": "convert1",
+            "nodes": [
+                {
+                    "name": "arc1",
+                    "x": 35,
+                    "y": 575,
+                    "fn": "g.arc",
+                    "values": {
+                        "arcType": "open",
+                        "degrees": 180,
+                        "startAngle": 180
+                    }
+                },
+                {
+                    "name": "makePoint1",
+                    "x": -65,
+                    "y": 455,
+                    "fn": "g.makePoint"
+                },
+                {
+                    "name": "resampleByAmount1",
+                    "x": 35,
+                    "y": 635,
+                    "fn": "g.resampleByAmount",
+                    "values": {
+                        "amount": 20
+                    }
+                },
+                {
+                    "name": "toPoints1",
+                    "x": 35,
+                    "y": 685,
+                    "fn": "g.toPoints"
+                },
+                {
+                    "name": "sample1",
+                    "x": 105,
+                    "y": -65,
+                    "fn": "g.sample",
+                    "values": {
+                        "amount": 4,
+                        "max": 1
+                    }
+                },
+                {
+                    "name": "connectPoints1",
+                    "x": 35,
+                    "y": 735,
+                    "fn": "g.connectPoints"
+                },
+                {
+                    "name": "easing1",
+                    "x": 105,
+                    "y": 5,
+                    "fn": "ani.easing",
+                    "values": {
+                        "direction": "InOut",
+                        "end": 50,
+                        "start": -50
+                    }
+                },
+                {
+                    "name": "rest1",
+                    "x": 175,
+                    "y": 115,
+                    "fn": "g.rest"
+                },
+                {
+                    "name": "subtract1",
+                    "x": 175,
+                    "y": 325,
+                    "fn": "g.subtract",
+                    "masterList": "a"
+                },
+                {
+                    "name": "add1",
+                    "x": -65,
+                    "y": 325,
+                    "fn": "g.add"
+                },
+                {
+                    "name": "divide1",
+                    "x": -65,
+                    "y": 405,
+                    "fn": "g.divide"
+                },
+                {
+                    "name": "reverse1",
+                    "x": -65,
+                    "y": 115,
+                    "fn": "g.reverse"
+                },
+                {
+                    "name": "rest2",
+                    "x": -65,
+                    "y": 165,
+                    "fn": "g.rest"
+                },
+                {
+                    "name": "reverse2",
+                    "x": -65,
+                    "y": 215,
+                    "fn": "g.reverse"
+                },
+                {
+                    "name": "pointOnPath1",
+                    "x": 35,
+                    "y": 835,
+                    "fn": "g.pointOnPath",
+                    "values": {
+                        "t": 1
+                    }
+                },
+                {
+                    "name": "lookup1",
+                    "x": 35,
+                    "y": 915,
+                    "fn": "g.lookup",
+                    "values": {
+                        "key": "y"
+                    }
+                },
+                {
+                    "name": "convert1",
+                    "x": 35,
+                    "y": 975,
+                    "fn": "g.convert",
+                    "values": {
+                        "inMax": -50,
+                        "outMax": 1
+                    }
+                },
+                {
+                    "name": "add2",
+                    "x": 105,
+                    "y": -145,
+                    "fn": "g.add",
+                    "values": {
+                        "b": 1,
+                        "a": 1
+                    }
+                }
+            ],
+            "connections": [
+                {
+                    "output": "makePoint1",
+                    "input": "arc1",
+                    "parameter": "position"
+                },
+                {
+                    "output": "arc1",
+                    "input": "resampleByAmount1",
+                    "parameter": "shape"
+                },
+                {
+                    "output": "toPoints1",
+                    "input": "connectPoints1",
+                    "parameter": "points"
+                },
+                {
+                    "output": "sample1",
+                    "input": "easing1",
+                    "parameter": "time"
+                },
+                {
+                    "output": "rest1",
+                    "input": "subtract1",
+                    "parameter": "a"
+                },
+                {
+                    "output": "easing1",
+                    "input": "rest1",
+                    "parameter": "l"
+                },
+                {
+                    "output": "easing1",
+                    "input": "subtract1",
+                    "parameter": "b"
+                },
+                {
+                    "output": "subtract1",
+                    "input": "arc1",
+                    "parameter": "width"
+                },
+                {
+                    "output": "subtract1",
+                    "input": "arc1",
+                    "parameter": "height"
+                },
+                {
+                    "output": "rest1",
+                    "input": "add1",
+                    "parameter": "b"
+                },
+                {
+                    "output": "add1",
+                    "input": "divide1",
+                    "parameter": "a"
+                },
+                {
+                    "output": "divide1",
+                    "input": "makePoint1",
+                    "parameter": "x"
+                },
+                {
+                    "output": "easing1",
+                    "input": "reverse1",
+                    "parameter": "l"
+                },
+                {
+                    "output": "reverse1",
+                    "input": "rest2",
+                    "parameter": "l"
+                },
+                {
+                    "output": "rest2",
+                    "input": "reverse2",
+                    "parameter": "l"
+                },
+                {
+                    "output": "reverse2",
+                    "input": "add1",
+                    "parameter": "a"
+                },
+                {
+                    "output": "resampleByAmount1",
+                    "input": "toPoints1",
+                    "parameter": "shape"
+                },
+                {
+                    "output": "connectPoints1",
+                    "input": "pointOnPath1",
+                    "parameter": "shape"
+                },
+                {
+                    "output": "pointOnPath1",
+                    "input": "lookup1",
+                    "parameter": "table"
+                },
+                {
+                    "output": "lookup1",
+                    "input": "convert1",
+                    "parameter": "v"
+                },
+                {
+                    "inlet": "t",
+                    "input": "pointOnPath1",
+                    "parameter": "t"
+                },
+                {
+                    "output": "add2",
+                    "input": "sample1",
+                    "parameter": "amount"
+                },
+                {
+                    "inlet": "hops",
+                    "input": "add2",
+                    "parameter": "a"
+                }
+            ],
+            "parameters": [
+                {
+                    "name": "t",
+                    "type": "ratio",
+                    "value": 0
+                },
+                {
+                    "name": "hops",
+                    "type": "int",
+                    "value": 5
+                }
+            ],
+            "returnsList": true,
+            "width": 200,
+            "height": 200
+        }
+    ],
+    "id": "nineSquares02"
+}

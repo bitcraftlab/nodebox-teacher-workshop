@@ -1,0 +1,1256 @@
+{
+    "title": "dataviz-example-01",
+    "color": "darkblue",
+    "dependencies": {
+        "core/g": "dev",
+        "bitcraftlab/net": "dev"
+    },
+    "assets": {
+        "2017-03-03_sds011_sensor_639.csv": "a99e52c63b0b6a98740c14f938838897"
+    },
+    "functions": [
+        {
+            "name": "main",
+            "type": "network",
+            "renderedNode": "combine2",
+            "nodes": [
+                {
+                    "name": "lookup1",
+                    "x": 585,
+                    "y": 725,
+                    "fn": "g.lookup",
+                    "values": {
+                        "key": "timestamp"
+                    }
+                },
+                {
+                    "name": "lookup2",
+                    "x": 785,
+                    "y": 725,
+                    "fn": "g.lookup",
+                    "values": {
+                        "key": "P1"
+                    }
+                },
+                {
+                    "name": "lookup3",
+                    "x": 955,
+                    "y": 725,
+                    "fn": "g.lookup",
+                    "values": {
+                        "key": "P2"
+                    }
+                },
+                {
+                    "name": "seconds1",
+                    "x": 585,
+                    "y": 865,
+                    "fn": "datavizExample01.seconds"
+                },
+                {
+                    "name": "plot1",
+                    "x": 345,
+                    "y": 1345,
+                    "fn": "datavizExample01.plot",
+                    "values": {}
+                },
+                {
+                    "name": "max1",
+                    "x": 725,
+                    "y": 1055,
+                    "fn": "g.max"
+                },
+                {
+                    "name": "max2",
+                    "x": 865,
+                    "y": 1055,
+                    "fn": "g.max"
+                },
+                {
+                    "name": "combine1",
+                    "x": 865,
+                    "y": 865,
+                    "fn": "g.combine"
+                },
+                {
+                    "name": "makePoint1",
+                    "x": 15,
+                    "y": 535,
+                    "fn": "g.makePoint",
+                    "values": {
+                        "x": 800,
+                        "y": 300
+                    }
+                },
+                {
+                    "name": "width",
+                    "x": 15,
+                    "y": 685,
+                    "fn": "g.lookup",
+                    "values": {
+                        "key": "x"
+                    }
+                },
+                {
+                    "name": "height",
+                    "x": 35,
+                    "y": 735,
+                    "fn": "g.lookup",
+                    "values": {
+                        "key": "y"
+                    }
+                },
+                {
+                    "name": "rect1",
+                    "x": 15,
+                    "y": 1345,
+                    "fn": "g.rect"
+                },
+                {
+                    "name": "colorize1",
+                    "x": 15,
+                    "y": 1385,
+                    "fn": "g.colorize",
+                    "values": {
+                        "fill": "rgba(255, 255, 255, 1)",
+                        "stroke": "rgba(0, 0, 0, 0.23483796296296297)"
+                    }
+                },
+                {
+                    "name": "combine2",
+                    "x": 295,
+                    "y": 1755,
+                    "fn": "g.combine"
+                },
+                {
+                    "name": "plot2",
+                    "x": 565,
+                    "y": 1345,
+                    "fn": "datavizExample01.plot"
+                },
+                {
+                    "name": "colorize2",
+                    "x": 345,
+                    "y": 1445,
+                    "fn": "g.colorize",
+                    "values": {
+                        "fill": "rgba(171, 196, 239, 1)",
+                        "stroke": "rgba(0, 0, 0, 0.7020833333333333)"
+                    }
+                },
+                {
+                    "name": "colorize3",
+                    "x": 565,
+                    "y": 1455,
+                    "fn": "g.colorize",
+                    "values": {
+                        "fill": "rgba(85, 131, 208, 0.7347222222222223)",
+                        "stroke": "rgba(0, 0, 0, 0.7643518518518518)"
+                    }
+                },
+                {
+                    "name": "importURL1",
+                    "x": 785,
+                    "y": 535,
+                    "fn": "net.importURL",
+                    "values": {
+                        "url": "https://archive.luftdaten.info/2017-03-03/2017-03-03_sds011_sensor_639.csv"
+                    }
+                },
+                {
+                    "name": "dateSelect",
+                    "x": 705,
+                    "y": -575,
+                    "fn": "g.string",
+                    "values": {
+                        "s": "2017-03-15"
+                    }
+                },
+                {
+                    "name": "dataURL",
+                    "x": 785,
+                    "y": 415,
+                    "fn": "g.concatenate",
+                    "values": {}
+                },
+                {
+                    "name": "filename",
+                    "x": 935,
+                    "y": 275,
+                    "fn": "g.concatenate",
+                    "values": {
+                        "s4": ".csv",
+                        "s3": "639",
+                        "s2": "_"
+                    }
+                },
+                {
+                    "name": "dateMin",
+                    "x": 885,
+                    "y": -575,
+                    "fn": "g.string",
+                    "values": {
+                        "s": "2016-07-14"
+                    }
+                },
+                {
+                    "name": "clampDate",
+                    "x": 925,
+                    "y": -385,
+                    "fn": "datavizExample01.clampString"
+                },
+                {
+                    "name": "yesterday1",
+                    "x": 1045,
+                    "y": -675,
+                    "fn": "datavizExample01.yesterday"
+                },
+                {
+                    "name": "dateMax",
+                    "x": 1045,
+                    "y": -575,
+                    "fn": "g.string"
+                },
+                {
+                    "name": "baseURL",
+                    "x": 785,
+                    "y": -225,
+                    "fn": "g.concatenate",
+                    "values": {
+                        "s1": "http://archive.luftdaten.info/",
+                        "s3": "/"
+                    }
+                },
+                {
+                    "name": "sensorChoices",
+                    "x": 1085,
+                    "y": -25,
+                    "fn": "datavizExample01.lookupIds"
+                },
+                {
+                    "name": "cull1",
+                    "x": 1085,
+                    "y": 165,
+                    "fn": "g.cull"
+                },
+                {
+                    "name": "stringEquals1",
+                    "x": 1255,
+                    "y": 65,
+                    "fn": "g.stringEquals"
+                },
+                {
+                    "name": "sensorSelect",
+                    "x": 1275,
+                    "y": -575,
+                    "fn": "g.string",
+                    "values": {
+                        "s": "sds011_sensor_639"
+                    }
+                },
+                {
+                    "name": "hexColor1",
+                    "x": 755,
+                    "y": 1345,
+                    "fn": "g.hexColor",
+                    "values": {
+                        "s": "4ecac2"
+                    }
+                },
+                {
+                    "name": "hslAdjust1",
+                    "x": 565,
+                    "y": 1525,
+                    "fn": "g.hslAdjust",
+                    "values": {
+                        "lightness": -0.25
+                    }
+                }
+            ],
+            "connections": [
+                {
+                    "output": "lookup1",
+                    "input": "seconds1",
+                    "parameter": "s"
+                },
+                {
+                    "output": "seconds1",
+                    "input": "plot1",
+                    "parameter": "x"
+                },
+                {
+                    "output": "lookup2",
+                    "input": "plot1",
+                    "parameter": "y"
+                },
+                {
+                    "output": "seconds1",
+                    "input": "max1",
+                    "parameter": "values"
+                },
+                {
+                    "output": "max1",
+                    "input": "plot1",
+                    "parameter": "xmax"
+                },
+                {
+                    "output": "lookup2",
+                    "input": "combine1",
+                    "parameter": "list1"
+                },
+                {
+                    "output": "lookup3",
+                    "input": "combine1",
+                    "parameter": "list2"
+                },
+                {
+                    "output": "combine1",
+                    "input": "max2",
+                    "parameter": "values"
+                },
+                {
+                    "output": "max2",
+                    "input": "plot1",
+                    "parameter": "ymax"
+                },
+                {
+                    "output": "makePoint1",
+                    "input": "width",
+                    "parameter": "table"
+                },
+                {
+                    "output": "makePoint1",
+                    "input": "height",
+                    "parameter": "table"
+                },
+                {
+                    "output": "makePoint1",
+                    "input": "plot1",
+                    "parameter": "dimensions"
+                },
+                {
+                    "output": "width",
+                    "input": "rect1",
+                    "parameter": "width"
+                },
+                {
+                    "output": "height",
+                    "input": "rect1",
+                    "parameter": "height"
+                },
+                {
+                    "output": "rect1",
+                    "input": "colorize1",
+                    "parameter": "shape"
+                },
+                {
+                    "output": "colorize1",
+                    "input": "combine2",
+                    "parameter": "list1"
+                },
+                {
+                    "output": "seconds1",
+                    "input": "plot2",
+                    "parameter": "x"
+                },
+                {
+                    "output": "lookup3",
+                    "input": "plot2",
+                    "parameter": "y"
+                },
+                {
+                    "output": "max1",
+                    "input": "plot2",
+                    "parameter": "xmax"
+                },
+                {
+                    "output": "max2",
+                    "input": "plot2",
+                    "parameter": "ymax"
+                },
+                {
+                    "output": "makePoint1",
+                    "input": "plot2",
+                    "parameter": "dimensions"
+                },
+                {
+                    "output": "plot1",
+                    "input": "colorize2",
+                    "parameter": "shape"
+                },
+                {
+                    "output": "plot2",
+                    "input": "colorize3",
+                    "parameter": "shape"
+                },
+                {
+                    "output": "colorize2",
+                    "input": "combine2",
+                    "parameter": "list4"
+                },
+                {
+                    "output": "dateSelect",
+                    "input": "clampDate",
+                    "parameter": "s"
+                },
+                {
+                    "output": "dateMin",
+                    "input": "clampDate",
+                    "parameter": "min"
+                },
+                {
+                    "output": "clampDate",
+                    "input": "filename",
+                    "parameter": "s1"
+                },
+                {
+                    "output": "importURL1",
+                    "input": "lookup1",
+                    "parameter": "table"
+                },
+                {
+                    "output": "importURL1",
+                    "input": "lookup2",
+                    "parameter": "table"
+                },
+                {
+                    "output": "importURL1",
+                    "input": "lookup3",
+                    "parameter": "table"
+                },
+                {
+                    "output": "yesterday1",
+                    "input": "dateMax",
+                    "parameter": "s"
+                },
+                {
+                    "output": "dateMax",
+                    "input": "clampDate",
+                    "parameter": "max"
+                },
+                {
+                    "output": "filename",
+                    "input": "dataURL",
+                    "parameter": "s3"
+                },
+                {
+                    "output": "baseURL",
+                    "input": "dataURL",
+                    "parameter": "s1"
+                },
+                {
+                    "output": "clampDate",
+                    "input": "baseURL",
+                    "parameter": "s2"
+                },
+                {
+                    "output": "baseURL",
+                    "input": "sensorChoices",
+                    "parameter": "url"
+                },
+                {
+                    "output": "sensorChoices",
+                    "input": "cull1",
+                    "parameter": "l"
+                },
+                {
+                    "output": "sensorChoices",
+                    "input": "stringEquals1",
+                    "parameter": "string1"
+                },
+                {
+                    "output": "stringEquals1",
+                    "input": "cull1",
+                    "parameter": "booleans"
+                },
+                {
+                    "output": "cull1",
+                    "input": "filename",
+                    "parameter": "s3"
+                },
+                {
+                    "output": "sensorSelect",
+                    "input": "stringEquals1",
+                    "parameter": "string2"
+                },
+                {
+                    "output": "dataURL",
+                    "input": "importURL1",
+                    "parameter": "url"
+                },
+                {
+                    "output": "hexColor1",
+                    "input": "colorize3",
+                    "parameter": "fill"
+                },
+                {
+                    "output": "hexColor1",
+                    "input": "colorize2",
+                    "parameter": "fill"
+                },
+                {
+                    "output": "colorize3",
+                    "input": "hslAdjust1",
+                    "parameter": "v"
+                },
+                {
+                    "output": "hslAdjust1",
+                    "input": "combine2",
+                    "parameter": "list3"
+                }
+            ],
+            "parameters": [],
+            "returnsList": true,
+            "stickies": [
+                {
+                    "x": 735,
+                    "y": 505,
+                    "width": 185,
+                    "height": 75,
+                    "text": "Load external assets"
+                },
+                {
+                    "x": 5732,
+                    "y": 1364,
+                    "width": 200,
+                    "height": 50,
+                    "text": "Double-click to edit"
+                },
+                {
+                    "x": 1255,
+                    "y": -605,
+                    "width": 165,
+                    "height": 75,
+                    "text": "Provided by the GUI"
+                },
+                {
+                    "x": 695,
+                    "y": -605,
+                    "width": 165,
+                    "height": 75,
+                    "text": "Provided by the GUI"
+                },
+                {
+                    "x": 1065,
+                    "y": -55,
+                    "width": 165,
+                    "height": 75,
+                    "text": "Used by the GUI"
+                }
+            ]
+        },
+        {
+            "name": "seconds",
+            "type": "network",
+            "renderedNode": "add1",
+            "nodes": [
+                {
+                    "name": "stringSplit1",
+                    "x": 105,
+                    "y": 105,
+                    "fn": "g.stringSplit",
+                    "values": {
+                        "separator": "T"
+                    }
+                },
+                {
+                    "name": "hh:mm:ss",
+                    "x": 105,
+                    "y": 185,
+                    "fn": "g.takeEvery",
+                    "values": {
+                        "n": 2,
+                        "offset": 1
+                    }
+                },
+                {
+                    "name": "stringSplit2",
+                    "x": 105,
+                    "y": 245,
+                    "fn": "g.stringSplit",
+                    "values": {
+                        "separator": ":"
+                    }
+                },
+                {
+                    "name": "hours",
+                    "x": -55,
+                    "y": 345,
+                    "fn": "g.takeEvery"
+                },
+                {
+                    "name": "minutes",
+                    "x": 105,
+                    "y": 345,
+                    "fn": "g.takeEvery",
+                    "values": {
+                        "offset": 1
+                    }
+                },
+                {
+                    "name": "seconds",
+                    "x": 255,
+                    "y": 345,
+                    "fn": "g.takeEvery",
+                    "values": {
+                        "offset": 2
+                    }
+                },
+                {
+                    "name": "multiply1",
+                    "x": 105,
+                    "y": 655,
+                    "fn": "g.multiply",
+                    "values": {
+                        "b": 60
+                    }
+                },
+                {
+                    "name": "add1",
+                    "x": 255,
+                    "y": 805,
+                    "fn": "g.add"
+                },
+                {
+                    "name": "multiply2",
+                    "x": -55,
+                    "y": 475,
+                    "fn": "g.multiply",
+                    "values": {
+                        "b": 60
+                    }
+                },
+                {
+                    "name": "add2",
+                    "x": 105,
+                    "y": 605,
+                    "fn": "g.add"
+                },
+                {
+                    "name": "integer1",
+                    "x": -55,
+                    "y": 385,
+                    "fn": "g.integer"
+                },
+                {
+                    "name": "integer2",
+                    "x": 105,
+                    "y": 385,
+                    "fn": "g.integer"
+                },
+                {
+                    "name": "integer3",
+                    "x": 255,
+                    "y": 385,
+                    "fn": "g.integer"
+                }
+            ],
+            "connections": [
+                {
+                    "inlet": "s",
+                    "input": "stringSplit1",
+                    "parameter": "s"
+                },
+                {
+                    "output": "stringSplit1",
+                    "input": "hh:mm:ss",
+                    "parameter": "l"
+                },
+                {
+                    "output": "hh:mm:ss",
+                    "input": "stringSplit2",
+                    "parameter": "s"
+                },
+                {
+                    "output": "stringSplit2",
+                    "input": "hours",
+                    "parameter": "l"
+                },
+                {
+                    "output": "stringSplit2",
+                    "input": "minutes",
+                    "parameter": "l"
+                },
+                {
+                    "output": "stringSplit2",
+                    "input": "seconds",
+                    "parameter": "l"
+                },
+                {
+                    "output": "multiply1",
+                    "input": "add1",
+                    "parameter": "a"
+                },
+                {
+                    "output": "multiply2",
+                    "input": "add2",
+                    "parameter": "a"
+                },
+                {
+                    "output": "add2",
+                    "input": "multiply1",
+                    "parameter": "a"
+                },
+                {
+                    "output": "hours",
+                    "input": "integer1",
+                    "parameter": "v"
+                },
+                {
+                    "output": "integer1",
+                    "input": "multiply2",
+                    "parameter": "a"
+                },
+                {
+                    "output": "minutes",
+                    "input": "integer2",
+                    "parameter": "v"
+                },
+                {
+                    "output": "integer2",
+                    "input": "add2",
+                    "parameter": "b"
+                },
+                {
+                    "output": "seconds",
+                    "input": "integer3",
+                    "parameter": "v"
+                },
+                {
+                    "output": "integer3",
+                    "input": "add1",
+                    "parameter": "b"
+                }
+            ],
+            "parameters": [
+                {
+                    "name": "s",
+                    "type": "string",
+                    "value": "T00:00:00"
+                }
+            ],
+            "returnsList": true
+        },
+        {
+            "name": "plot",
+            "type": "network",
+            "renderedNode": "translate1",
+            "nodes": [
+                {
+                    "name": "x",
+                    "x": 705,
+                    "y": 215,
+                    "fn": "g.lookup",
+                    "values": {
+                        "key": "x"
+                    }
+                },
+                {
+                    "name": "y",
+                    "x": 865,
+                    "y": 215,
+                    "fn": "g.lookup",
+                    "values": {
+                        "key": "y"
+                    }
+                },
+                {
+                    "name": "convert1",
+                    "x": 25,
+                    "y": 415,
+                    "fn": "g.convert"
+                },
+                {
+                    "name": "convert2",
+                    "x": 265,
+                    "y": 415,
+                    "fn": "g.convert"
+                },
+                {
+                    "name": "connectPoints1",
+                    "x": 175,
+                    "y": 865,
+                    "fn": "g.connectPoints",
+                    "values": {
+                        "closed": true
+                    }
+                },
+                {
+                    "name": "makePoint1",
+                    "x": 155,
+                    "y": 645,
+                    "fn": "g.makePoint"
+                },
+                {
+                    "name": "makePoint2",
+                    "x": 25,
+                    "y": 645,
+                    "fn": "g.makePoint"
+                },
+                {
+                    "name": "makePoint3",
+                    "x": 295,
+                    "y": 645,
+                    "fn": "g.makePoint"
+                },
+                {
+                    "name": "combine1",
+                    "x": 175,
+                    "y": 795,
+                    "fn": "g.combine"
+                },
+                {
+                    "name": "translate1",
+                    "x": 255,
+                    "y": 1035,
+                    "fn": "g.translate"
+                },
+                {
+                    "name": "divide1",
+                    "x": 705,
+                    "y": 675,
+                    "fn": "g.divide",
+                    "values": {
+                        "b": -2
+                    }
+                },
+                {
+                    "name": "divide2",
+                    "x": 865,
+                    "y": 675,
+                    "fn": "g.divide",
+                    "values": {
+                        "b": -2
+                    }
+                },
+                {
+                    "name": "makePoint4",
+                    "x": 785,
+                    "y": 785,
+                    "fn": "g.makePoint"
+                }
+            ],
+            "connections": [
+                {
+                    "output": "x",
+                    "input": "convert1",
+                    "parameter": "outMax"
+                },
+                {
+                    "output": "y",
+                    "input": "convert2",
+                    "parameter": "outMax"
+                },
+                {
+                    "output": "convert1",
+                    "input": "makePoint1",
+                    "parameter": "x"
+                },
+                {
+                    "output": "convert2",
+                    "input": "makePoint1",
+                    "parameter": "y"
+                },
+                {
+                    "inlet": "dimensions",
+                    "input": "x",
+                    "parameter": "table"
+                },
+                {
+                    "inlet": "dimensions",
+                    "input": "y",
+                    "parameter": "table"
+                },
+                {
+                    "inlet": "x",
+                    "input": "convert1",
+                    "parameter": "v"
+                },
+                {
+                    "inlet": "y",
+                    "input": "convert2",
+                    "parameter": "v"
+                },
+                {
+                    "inlet": "xmin",
+                    "input": "convert1",
+                    "parameter": "inMin"
+                },
+                {
+                    "inlet": "xmax",
+                    "input": "convert1",
+                    "parameter": "inMax"
+                },
+                {
+                    "inlet": "ymin",
+                    "input": "convert2",
+                    "parameter": "inMin"
+                },
+                {
+                    "inlet": "ymax",
+                    "input": "convert2",
+                    "parameter": "inMax"
+                },
+                {
+                    "output": "y",
+                    "input": "makePoint2",
+                    "parameter": "y"
+                },
+                {
+                    "output": "x",
+                    "input": "makePoint3",
+                    "parameter": "x"
+                },
+                {
+                    "output": "y",
+                    "input": "makePoint3",
+                    "parameter": "y"
+                },
+                {
+                    "output": "makePoint2",
+                    "input": "combine1",
+                    "parameter": "list1"
+                },
+                {
+                    "output": "makePoint1",
+                    "input": "combine1",
+                    "parameter": "list2"
+                },
+                {
+                    "output": "makePoint3",
+                    "input": "combine1",
+                    "parameter": "list3"
+                },
+                {
+                    "output": "combine1",
+                    "input": "connectPoints1",
+                    "parameter": "points"
+                },
+                {
+                    "output": "connectPoints1",
+                    "input": "translate1",
+                    "parameter": "shape"
+                },
+                {
+                    "output": "x",
+                    "input": "divide1",
+                    "parameter": "a"
+                },
+                {
+                    "output": "y",
+                    "input": "divide2",
+                    "parameter": "a"
+                },
+                {
+                    "output": "divide1",
+                    "input": "makePoint4",
+                    "parameter": "x"
+                },
+                {
+                    "output": "divide2",
+                    "input": "makePoint4",
+                    "parameter": "y"
+                },
+                {
+                    "output": "makePoint4",
+                    "input": "translate1",
+                    "parameter": "translate"
+                }
+            ],
+            "parameters": [
+                {
+                    "name": "x",
+                    "type": "float",
+                    "value": 1,
+                    "takesList": true
+                },
+                {
+                    "name": "y",
+                    "type": "float",
+                    "value": 1,
+                    "takesList": true
+                },
+                {
+                    "name": "xmin",
+                    "type": "float",
+                    "value": 0
+                },
+                {
+                    "name": "xmax",
+                    "type": "float",
+                    "value": 100
+                },
+                {
+                    "name": "ymin",
+                    "type": "float",
+                    "value": 0
+                },
+                {
+                    "name": "ymax",
+                    "type": "float",
+                    "value": 100
+                },
+                {
+                    "name": "dimensions",
+                    "type": "point",
+                    "value": {
+                        "x": 800,
+                        "y": 600
+                    }
+                }
+            ],
+            "returnsList": true
+        },
+        {
+            "name": "clampString",
+            "type": "network",
+            "renderedNode": "second1",
+            "nodes": [
+                {
+                    "name": "combine1",
+                    "x": 45,
+                    "y": 85,
+                    "fn": "g.combine"
+                },
+                {
+                    "name": "sort1",
+                    "x": 45,
+                    "y": 135,
+                    "fn": "g.sort"
+                },
+                {
+                    "name": "second1",
+                    "x": 45,
+                    "y": 185,
+                    "fn": "g.second"
+                }
+            ],
+            "connections": [
+                {
+                    "inlet": "s",
+                    "input": "combine1",
+                    "parameter": "list1"
+                },
+                {
+                    "inlet": "min",
+                    "input": "combine1",
+                    "parameter": "list2"
+                },
+                {
+                    "inlet": "max",
+                    "input": "combine1",
+                    "parameter": "list3"
+                },
+                {
+                    "output": "combine1",
+                    "input": "sort1",
+                    "parameter": "l"
+                },
+                {
+                    "output": "sort1",
+                    "input": "second1",
+                    "parameter": "l"
+                }
+            ],
+            "parameters": [
+                {
+                    "name": "s",
+                    "type": "string",
+                    "value": ""
+                },
+                {
+                    "name": "min",
+                    "type": "string",
+                    "value": ""
+                },
+                {
+                    "name": "max",
+                    "type": "string",
+                    "value": ""
+                }
+            ],
+            "returnsList": true
+        },
+        {
+            "name": "yesterday",
+            "type": "code",
+            "outputType": "string",
+            "parameters": [],
+            "source": "datavizExample01.yesterday = function () {\n    var d = new Date();\n    d.setDate(d.getDate() - 1);\n    return d.toISOString().slice(0,10);\n};",
+            "ref": "",
+            "category": ""
+        },
+        {
+            "name": "lookupLinks",
+            "type": "code",
+            "outputType": "",
+            "parameters": [
+                {
+                    "name": "html",
+                    "type": "",
+                    "value": 1
+                },
+                {
+                    "name": "base",
+                    "type": "string",
+                    "value": ""
+                }
+            ],
+            "source": "datavizExample01.lookupLinks = function (html, base) {\n    if (html && html.getElementsByTagName) {\n\n        var base = base || '';\n\n        // get all the links\n        var tags = [].slice.call(html.getElementsByTagName('a'));\n\n        // make sure the Base URI does not get lost!\n        var links = tags.map(tag => base + tag.getAttribute('href'));\n        return links;\n\n    };\n    return {};\n};",
+            "ref": "",
+            "category": "",
+            "returnsList": true
+        },
+        {
+            "name": "lookupIds",
+            "type": "network",
+            "renderedNode": "regex2",
+            "nodes": [
+                {
+                    "name": "importURL1",
+                    "x": 45,
+                    "y": 85,
+                    "fn": "net.importURL"
+                },
+                {
+                    "name": "lookupLinks1",
+                    "x": 55,
+                    "y": 185,
+                    "fn": "datavizExample01.lookupLinks"
+                },
+                {
+                    "name": "pattern",
+                    "x": 235,
+                    "y": 585,
+                    "fn": "g.string",
+                    "values": {
+                        "s": ".*?_(sds.*).csv"
+                    }
+                },
+                {
+                    "name": "regex2",
+                    "x": 55,
+                    "y": 805,
+                    "fn": "datavizExample01.regex",
+                    "values": {
+                        "group": 1
+                    }
+                },
+                {
+                    "name": "cull2",
+                    "x": 55,
+                    "y": 485,
+                    "fn": "g.cull"
+                },
+                {
+                    "name": "endsWith1",
+                    "x": 225,
+                    "y": 355,
+                    "fn": "g.endsWith",
+                    "values": {
+                        "value": ".csv"
+                    }
+                },
+                {
+                    "name": "cssLinks",
+                    "x": 55,
+                    "y": 585,
+                    "fn": "g.string"
+                }
+            ],
+            "connections": [
+                {
+                    "inlet": "url",
+                    "input": "importURL1",
+                    "parameter": "url"
+                },
+                {
+                    "output": "importURL1",
+                    "input": "lookupLinks1",
+                    "parameter": "html"
+                },
+                {
+                    "inlet": "url",
+                    "input": "lookupLinks1",
+                    "parameter": "base"
+                },
+                {
+                    "output": "pattern",
+                    "input": "regex2",
+                    "parameter": "reg"
+                },
+                {
+                    "output": "lookupLinks1",
+                    "input": "cull2",
+                    "parameter": "l"
+                },
+                {
+                    "output": "lookupLinks1",
+                    "input": "endsWith1",
+                    "parameter": "s"
+                },
+                {
+                    "output": "endsWith1",
+                    "input": "cull2",
+                    "parameter": "booleans"
+                },
+                {
+                    "output": "cull2",
+                    "input": "cssLinks",
+                    "parameter": "s"
+                },
+                {
+                    "output": "cssLinks",
+                    "input": "regex2",
+                    "parameter": "str"
+                }
+            ],
+            "parameters": [
+                {
+                    "name": "url",
+                    "type": "string",
+                    "value": "http://archive.luftdaten.info/2017-01-01/"
+                }
+            ],
+            "returnsList": true,
+            "async": true,
+            "stickies": [
+                {
+                    "x": 215,
+                    "y": 555,
+                    "width": 205,
+                    "height": 85,
+                    "text": "Only select SDS sensors"
+                }
+            ]
+        },
+        {
+            "name": "regex",
+            "type": "code",
+            "outputType": "string",
+            "parameters": [
+                {
+                    "name": "str",
+                    "type": "string",
+                    "value": "",
+                    "takesList": true
+                },
+                {
+                    "name": "reg",
+                    "type": "string",
+                    "value": ".*"
+                },
+                {
+                    "name": "group",
+                    "type": "int",
+                    "value": 0
+                }
+            ],
+            "source": "datavizExample01.regex = function (str, reg, group) {\n\n    if (!reg || !str) return;\n\n    return str.map(function (s) {\n\n        var regex = new RegExp(reg);\n        var result = regex.exec(s);\n\n        // return the matching group\n        if (result !== null) return result[group];\n\n    }).filter(e => e != null);\n\n};",
+            "ref": "",
+            "category": "",
+            "returnsList": true
+        }
+    ],
+    "id": "datavizExample01"
+}
