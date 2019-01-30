@@ -18,6 +18,11 @@ This are a couple of advanced embedding examples.
 * [Dataviz Example](examples/dataviz_example)
   Embedding Data-Visualization + interaction with a form
 
+## Nodebox Functions
+
+The nodebox programs (or functions) are hosted on nodebox.live.  
+They are also contained in the [functions](assets/functions) folder.
+
 ## License
 
 MIT licensed
